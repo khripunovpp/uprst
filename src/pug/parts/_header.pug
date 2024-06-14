@@ -1,0 +1,22 @@
+section.header
+    .container
+        .header__inner
+            .header__logo
+                a(href='/')
+                    img(src='./img/logo.svg', alt='').logo
+
+            nav.header__nav.nav
+                ul.nav__list
+                    li.nav__item
+                        a(href='/') Company
+                    li.nav__item
+                        a(href='/') Functionalities
+                    li.nav__item
+                        a(href='/') Services
+                    li.nav__item
+                        a(href='/') Pricing
+                    li.nav__item
+                        a(href='/') Contacts
+
+            .header__button
+                button.btn.js-open-dialog(data-dialog-id="order", type="button") Book a demo

@@ -1,0 +1,18 @@
+mixin hero(pic,name,text, way)
+    section.lead
+        .lead__picture.lazy-wrapper
+            img.lazy(data-src=`./img/${pic}`, alt='').only-desktop
+        .container
+            .lead__inner
+                .lead__content
+                    .lead__breadcrumbs
+                        nav.breadcrumbs
+                            ul
+                                li
+                                    a(href='./') Главная
+                                if way
+                                    - for (let i = 0; i < way.length; i++)
+                                        li
+                                            a(href=way[i].link)= way[i].label
+                                li= name
+                    h1.lead__title= name

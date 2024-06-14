@@ -1,0 +1,19 @@
+<!doctype html>
+html(lang="ru")
+    head
+
+        base(href='./')
+        include ./parts/_meta
+        +meta("Главная")
+        block scripts
+            include ./parts/_head-scripts
+
+    body
+        section.overflow.main-page
+            include ./parts/_header
+            section.tail
+                p Hello, World!
+            include ./parts/_footer
+        include ./parts/_dialogs
+        include ./parts/_footer-scripts.html
+        script(defer,src='./js/main.js?v='+Date.now())

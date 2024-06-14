@@ -1,0 +1,25 @@
+footer.footer
+    .container
+        .footer__inner
+            .footer__top
+                .footer__logo
+                    a(href='/')
+                        img(data-src='/img/logo-white.png', alt='').logo.lazy
+                .footer__contacts
+                    .footer__contacts-item
+                        a(href=`tel:0000000000`)
+                    .footer__contacts-item
+                        a(href=`tel:0000000000`, target='_blank')
+                            img(data-src='/img/whatsapp-icon-white.png', alt='').lazy
+                    .footer__contacts-item
+                        a(href=`tel:0000000000`, target='_blank')
+                            img(data-src='/img/telegram-icon-white.png', alt='').lazy
+                    .footer__contacts-item
+                        a(href=`tel:0000000000`, target='_blank')
+                            img(data-src='/img/mail-icon-white.png', alt='').lazy
+                    .footer__contacts-item
+                        button.btn.js-open-dialog(data-dialog-id="order", type="button") Оставить заявку
+            .footer__bottom
+                span.footer__copy © , #[span.year]
+                .footer__policy
+                    a(href='./policy') Политика конфиденциальности

@@ -1,0 +1,73 @@
+mixin form(name, caption, text)
+    section.order.js-loading-wrapper
+        h2.order__title= caption || "Оставить заявку"
+        p.order__text= text || "Сотрудники нашей компании бесплатно проконсультируют вас по условиям программы"
+        section.order__form
+            form.form(action=`${formUrl}`, method='post')
+                section.form__field
+                    label.form__label Имя
+                    input.form__control(type='text', name='name')
+                    p.form__field-errorText Обязательное поле
+                section.form__field
+                    label.form__label Телефон
+                    input.form__control(type='tel', name='phone')
+                    p.form__field-errorText Обязательное поле
+                section.form__section
+                    .form__checkbox
+                        label.form__checkboxContainer
+                            span Согласен с&nbsp;
+                                a(href="/policy", target="_blank") условиями обработки
+                                | &nbsp;персональных данных
+                            input(type='checkbox', name='agree')
+                            span.form__checkboxMark
+                                span.form__checkboxMark-icon
+                                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 5L5 9L13 1" stroke="black" stroke-width="2"/>
+                                    </svg>
+
+                        p.form__field-errorText Обязательное поле
+                section.form__section
+                    div.q-captcha(id=`${name || "order"}-captcha`)
+                    p.form__captcha-errors Обязательное поле
+                section.form__footer
+                    input(type='hidden', name='formName', value=`${name || "order"}`)
+                    button.form__submit.btn(type='submit') Отправить заявку
+
+mixin formPartner()
+    section.order.order--partner.js-loading-wrapper
+        h2.order__title Стать партнером
+        p.order__text Сотрудники нашей компании бесплатно проконсультируют вас
+        section.order__form
+            form.form(action=`${formUrl}`, method='post')
+                section.form__field
+                    label.form__label Наименование организации
+                    input.form__control(type='text', name='company')
+                    p.form__field-errorText Обязательное поле
+                section.form__field
+                    label.form__label Контактное лицо
+                    input.form__control(type='text', name='name')
+                    p.form__field-errorText Обязательное поле
+                section.form__field
+                    label.form__label Телефон
+                    input.form__control(type='tel', name='phone')
+                    p.form__field-errorText Обязательное поле
+                section.form__section
+                    .form__checkbox
+                        label.form__checkboxContainer
+                            span Согласен с&nbsp;
+                                a(href="/policy", target="_blank") условиями обработки
+                                | &nbsp;персональных данных
+                            input(type='checkbox', name='agree')
+                            span.form__checkboxMark
+                                span.form__checkboxMark-icon
+                                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 5L5 9L13 1" stroke="black" stroke-width="2"/>
+                                    </svg>
+
+                        p.form__field-errorText Обязательное поле
+                section.form__section
+                    div.q-captcha(id=`partner-captcha`)
+                    p.form__captcha-errors Обязательное поле
+                section.form__footer
+                    input(type='hidden', name='formName', value='partner')
+                    button.form__submit.btn(type='submit') Отправить заявку
