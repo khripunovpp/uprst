@@ -1,25 +1,41 @@
 footer.footer
     .container
         .footer__inner
-            .footer__top
-                .footer__logo
-                    a(href='/')
-                        img(data-src='/img/logo-white.png', alt='').logo.lazy
-                .footer__contacts
-                    .footer__contacts-item
-                        a(href=`tel:0000000000`)
-                    .footer__contacts-item
-                        a(href=`tel:0000000000`, target='_blank')
-                            img(data-src='/img/whatsapp-icon-white.png', alt='').lazy
-                    .footer__contacts-item
-                        a(href=`tel:0000000000`, target='_blank')
-                            img(data-src='/img/telegram-icon-white.png', alt='').lazy
-                    .footer__contacts-item
-                        a(href=`tel:0000000000`, target='_blank')
-                            img(data-src='/img/mail-icon-white.png', alt='').lazy
-                    .footer__contacts-item
-                        button.btn.js-open-dialog(data-dialog-id="order", type="button") Оставить заявку
-            .footer__bottom
-                span.footer__copy © , #[span.year]
-                .footer__policy
-                    a(href='./policy') Политика конфиденциальности
+            section.footer__top
+                section.footer__top-left
+                    .footer__logo
+                        a(href='/').logo
+                            img(data-src='/img/logo-white.svg', alt='').lazy
+
+                    nav.footer__nav.nav
+                        ul.nav__list
+                            li.nav__item
+                                a(href='/') Company
+                            li.nav__item
+                                a(href='/') Functionalities
+                            li.nav__item
+                                a(href='/') Services
+                            li.nav__item
+                                a(href='/') Pricing
+                            li.nav__item
+                                a(href='/') Contacts
+
+                section.footer__top-right
+                    .footer__contacts
+                        p Address:
+                            br
+                            | Rua Salvador Barata Feyo, 7,
+                            br
+                            | 1DTO, 2780-355, Oeiras, Portugal.
+                        p Phone:&nbsp;
+                            a(href='tel:+351 214 407 305') +351 214 407 305
+                        p Social:&nbsp;
+                            a(href='https://www.instagram.com/')
+                                span.icon.icon--instagram
+                            a(href='https://www.instagram.com/')
+                                span.icon.icon--instagram
+
+            section.footer__bottom
+                span.footer__copy © Copyright Uprest LDA , #[span.year]
+                section.footer__policy
+                    a(href='./policy') Privacy Policy

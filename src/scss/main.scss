@@ -11,6 +11,7 @@ body {
   -webkit-tap-highlight-color: rgba(vars.$brand-color, 0.2);
   user-select: none;
   font-weight: 500;
+  color: vars.$brand-color-dark;
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
     //font-size: 13px;
@@ -49,12 +50,12 @@ body {
   appearance: none;
   font-family: inherit;
   font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 500;
   line-height: 1;
-  padding: 15px 30px;
+  padding: 15px 36px;
   border: none;
-  background-color: #000;
+  border-radius: 50px;
+  background-color: vars.$brand-color;
   color: #fff;
   transition-property: background-color, color;
   transition-duration: 0.2s;
@@ -63,24 +64,39 @@ body {
   display: inline-block;
 
   &:hover {
-    background-color: vars.$brand-color;
-    color: #000;
+    background-color: vars.$brand-color-dark;
+    color: #fff;
   }
 
   &--inverse {
-    background-color: vars.$brand-color;
-    color: #000;
+    background-color: #fff;
+    color: vars.$brand-color-dark;
 
     &:hover {
-      background-color: #000;
+      background-color: vars.$brand-color;
       color: #fff;
     }
+  }
+
+  &--outlined {
+    background-color: transparent;
+    color: vars.$brand-color-dark;
+    border: 2px solid vars.$brand-color;
+
+    &:hover {
+      background-color: vars.$brand-color;
+      color: #fff;
+    }
+  }
+
+  &--smaller {
+    font-size: 18px;
+    padding: 12px 23px;
   }
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
     font-size: 18px;
     padding: 13px 30px;
-
   }
 }
 
