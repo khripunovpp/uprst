@@ -12,20 +12,16 @@
   }
 
   &__nav {
+    margin: 0 25px;
+  }
+
+  &__logo {
+    display: flex;
   }
 
   .logo {
     width: 100%;
-  }
-
-
-  @media screen and (max-width: 1300px) {
-    &__contacts {
-
-      &-item {
-        margin-left: 40px;
-      }
-    }
+    display: inline-block;
   }
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
@@ -50,6 +46,6 @@
     margin: 0;
   }
   &__item {
-    margin: 0 50px;
+    margin: 0 25px;
   }
 }

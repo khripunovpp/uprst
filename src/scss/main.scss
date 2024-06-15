@@ -5,15 +5,16 @@
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: normal;
   -webkit-tap-highlight-color: rgba(vars.$brand-color, 0.2);
   user-select: none;
+  font-weight: 500;
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
-    font-size: 13px;
-    line-height: 150%;
+    //font-size: 13px;
+    //line-height: 150%;
   }
 
   &.popup-opened {
@@ -113,6 +114,7 @@ a {
 img {
   max-width: 100%;
   max-height: 100%;
+  display: block;
 }
 
 .logo {
@@ -201,7 +203,6 @@ img {
     letter-spacing: -0.03em;
     text-wrap: balance;
     max-width: 50%;
-    view-transition-name: hero;
 
     .partners-page & {
       font-size: clamp(35px, 4vw, 60px);
@@ -1411,163 +1412,6 @@ select {
   &--danger {
     border-color: #ED8080;
   }
-}
-
-
-.touch {
-  display: none;
-}
-
-.touch__current {
-  margin: 0 !important;
-
-  span {
-    margin-left: 12px;
-    display: inline-block
-  }
-}
-
-.touch__item {
-  margin: 0 !important;
-
-}
-
-.touch__item span {
-  display: inline-block;
-  margin-left: 12px
-}
-
-.touch__current, .touch__dropdown-wrapper, .touch__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
-}
-
-.touch__button {
-  display: none
-}
-
-@media screen and (max-width: 991px) {
-  .touch {
-    opacity: .99;
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-left: 20px;
-
-    img {
-      max-width: 24px;
-    }
-
-  }
-
-  .touch__dropdown {
-    height: 0;
-    -webkit-transition: height .2s ease-out;
-    -o-transition: height .2s ease-out;
-    transition: height .2s ease-out;
-    position: absolute;
-    z-index: -1;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .touch__dropdown-wrapper {
-    width: 100%;
-    background-color: #fff;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    -webkit-transition: -webkit-transform .2s ease-out;
-    transition: -webkit-transform .2s ease-out;
-    -o-transition: transform .2s ease-out;
-    transition: transform .2s ease-out;
-    transition: transform .2s ease-out, -webkit-transform .2s ease-out;
-    position: relative;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    padding: 0 3px;
-  }
-
-  .touch__item {
-    margin-left: 0;
-    padding: 10px
-  }
-
-  .touch__current {
-    padding: 8px 0 8px 11px
-  }
-
-  .touch__button {
-    display: block;
-    margin-left: 10px;
-    height: 40px;
-    width: 30px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    outline: 0 !important
-  }
-
-  .touch__button::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: 14px;
-    right: 10px;
-    border-bottom: 2px solid #000;
-    border-left: 2px solid #000;
-    transform: rotate(-45deg)
-  }
-
-  .touch__visible {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background-color: #fff;
-    overflow: hidden;
-    border-radius: 12px 5px
-  }
-
-  .touch.opened .touch__button {
-    -webkit-transform: scale(1, -1);
-    -ms-transform: scale(1, -1);
-    transform: scale(1, -1)
-  }
-
-  .touch.opened .touch__dropdown {
-    height: 136px
-  }
-
-  .touch.opened .touch__dropdown-wrapper {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0)
-  }
-}
-
-/* Old stuff going out */
-::view-transition-old(hero) {
-  animation: fade 0.2s linear forwards;
-}
-
-/* New stuff coming in */
-::view-transition-new(hero) {
-  animation: fade 0.3s linear reverse;
 }
 
 @keyframes fade {
