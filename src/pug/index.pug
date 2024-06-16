@@ -12,8 +12,36 @@ html(lang="ru")
         section.overflow.main-page
             include ./parts/_header
             section.tail
-                .container
-                    p Hello, World!
+                section.hero
+                    .container
+                        .hero__inner
+                            section.hero__content
+                                h1.hero__title= 'All-in-one \nrestaurant POS \nand suppliers \nsolution'
+                                .hero__text
+                                    p One restaurant system for&nbsp;all
+                                footer.hero__footer
+                                    button.hero__button.btn Book a demo
+                                    span.price.hero__price from 49€/month
+                            aside.hero__picture.lazy-wrapper.is-loaded
+                                .hero__picture-wrapper
+                                    img.hero__picture-img.lazy.only-desktop(alt='' src='./img/hero-index.jpg' style='')
+                                    img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-index-mobile.jpg' alt='')
+                                .hero__messages
+
+                                    .message
+
+                                        .message__pic
+                                            img.message__pic-img(src='./img/message-ava-1.png' alt='')
+                                        .message__text
+                                            p= 'All-in-one \nrestaurant POS \nand suppliers \nsolution'
+
+                                    .message
+                                        .message__pic
+                                            img.message__pic-img(src='./img/message-ava-2.png' alt='')
+                                        .message__text
+                                            p= 'All-in-one \nrestaurant POS \nand suppliers \nsolution'
+
+
             include ./parts/_footer
         include ./parts/_dialogs
         include ./parts/_footer-scripts.html
