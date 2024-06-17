@@ -39,8 +39,6 @@ html(lang="ru")
                                         .message__text
                                             p Real-time data sharpens your planning, visibility and control
 
-
-
                 section.counters.section
                     .container
                         ul.counters__list
@@ -61,7 +59,46 @@ html(lang="ru")
                                 span Cooperation companies
                         section.counters__text
                             p= `Globally e-enable process-centric internal or "organic" sources rather than impactful \nmindshare. Efficiently actualize next-generation e-commerce without cross functional users. \nUniquely synthesize stand-alone bandwidth through worldwide potentialities`
+
+
+                section.section.functionality
+                    .container
+                        .functionality__inner
+                            section.functionality__content
+                                h2.functionality__title.section-title Functionalities
+                                section.functionality__list
+                                    a(href='#').functionality__item
+                                        picture
+                                            img.lazy(data-src='./img/functionality-icon-1.svg' alt='')
+                                        span Smart POS
+                                        span.btn.btn--smaller.btn--link Learn more
+                                    a(href='#').functionality__item
+                                        picture
+                                            img.lazy(data-src='./img/functionality-icon-2.svg' alt='')
+                                        span Stock management
+                                        span.btn.btn--smaller.btn--link Learn more
+                                    a(href='#').functionality__item
+                                        picture
+                                            img.lazy(data-src='./img/functionality-icon-3.svg' alt='')
+                                        span Staff
+                                        span.btn.btn--smaller.btn--link Learn more
+                                    a(href='#').functionality__item
+                                        picture
+                                            img.lazy(data-src='./img/functionality-icon-4.svg' alt='')
+                                        span Financials
+                                        span.btn.btn--smaller.btn--link Learn more
+                                    a(href='#').functionality__item
+                                        picture
+                                            img.lazy(data-src='./img/functionality-icon-5.svg' alt='')
+                                        span Franchises and chains
+                                        span.btn.btn--smaller.btn--link Learn more
+                                    a(href='#').functionality__item
+                                        picture
+                                            img.lazy(data-src='./img/functionality-icon-6.svg' alt='')
+                                        span Marketplace
+                                        span.btn.btn--smaller.btn--link Learn more
+
             include ./parts/_footer
         include ./parts/_dialogs
         include ./parts/_footer-scripts.html
-        script(defer,src='./js/main.js?v='+Date.now())
+        script(defer,src='./js/main.js?v=' + Date.now())
