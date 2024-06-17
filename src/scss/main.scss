@@ -64,11 +64,14 @@ body {
   text-align: center;
 }
 
-.section-title + p {
+.section-title + .section-subtitle {
   margin-top: -40px;
-  margin-bottom: 60px;
 }
 
+.section-subtitle {
+  text-align: center;
+  margin: 0 0 60px;
+}
 
 .btn {
   appearance: none;
@@ -1540,47 +1543,85 @@ select {
 
 }
 
-//.company-card {
-//  display: flex;
-//  flex-direction: column;
-//  align-items: center;
-//  justify-content: center;
-//  color: $font-color;
-//  text-decoration: none;
-//
-//  &__picture {
-//    display: flex;
-//    align-items: center;
-//    justify-content: center;
-//    height: 60px;
-//  }
-//
-//  &__name {
-//    margin: 10px 0 0 0;
-//    opacity: 0.8;
-//    font-size: 12px;
-//    line-height: 18px;
-//    transition: opacity 0.2s ease-in-out;
-//  }
-//
-//  &:hover {
-//    .company-card {
-//      &__name {
-//        opacity: 1;
-//      }
-//    }
-//  }
-//
-//  @media screen and (min-width: 991px) {
-//    &__picture {
-//      height: 120px;
-//    }
-//    &__name {
-//      margin: 35px 0 0 0;
-//      font-size: inherit;
-//      line-height: normal;
-//    }
-//  }
-//  @media screen and (min-width: 1500px) {
-//  }
-//}
+
+.faq {
+  background-color: vars.$bg-gray;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin: 0 0 20px;
+    background-color: #fff;
+    padding: 30px;
+    padding-right: 106px;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      .faq {
+        &__question {
+          color: vars.$brand-color;
+        }
+
+        &__button {
+
+          &-minus,
+          &-plus {
+            filter: brightness(100%);
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+
+    &-minus,
+    &-plus {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      filter: brightness(0%);
+      transition: filter 0.3s ease-in-out;
+
+    }
+
+    &__minus {
+      opacity: 0;
+    }
+  }
+
+  &__question,
+  &__answer {
+    transition: color 0.3s ease-in-out;
+  }
+
+  &__question {
+    font-size: 24px;
+    line-height: 120%;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__answer {
+    font-size: 18px;
+    line-height: 170%;
+    opacity: 0.6;
+    display: none;
+  }
+}
