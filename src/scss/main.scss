@@ -86,7 +86,7 @@ body {
     color: vars.$brand-color-dark;
 
     &:hover {
-      background-color: vars.$brand-color;
+      background-color: vars.$brand-color-dark;
       color: #fff;
     }
   }

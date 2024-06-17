@@ -26,6 +26,7 @@
       margin-right: 25px;
       flex-wrap: wrap;
     }
+
     &-right {
       flex: 1 0 300px;
     }
@@ -113,5 +114,109 @@
       }
     }
 
+  }
+}
+
+// like hero's styles
+.prefooter {
+  padding: 60px 0;
+  background-color: vars.$brand-color;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &__title {
+    white-space: pre-wrap;
+    font-size: clamp(30px, 8vw, 35px);
+    line-height: clamp(35px, 8vw, 43px);
+    margin: 0 0 10px;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+
+  &__text {
+    font-size: 12px;
+
+    p {
+      margin: 0;
+    }
+
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+  }
+
+  &__picture {
+    aspect-ratio: 1.6;
+    position: absolute;
+    bottom: -125px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    margin-left: 250px;
+    max-width: clamp(450px, 50vw, 760px);
+
+    &-img {
+      max-width: none;
+      max-height: none;
+    }
+  }
+
+  &__price {
+    font-size: 24px;;
+  }
+
+  &__footer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .button + .button {
+      margin-top: 15px;
+    }
+  }
+
+  &__text {
+    line-height: 18px;
+  }
+
+  @media screen and (min-width: 991px) {
+    padding: 40px 0 100px;
+
+    &__inner {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__content {
+      padding-right: 95px;
+    }
+    &__text {
+      font-size: 30px;
+      line-height: 130%;
+    }
+    &__title {
+      font-size: clamp(45px, 5vw, 60px);
+      line-height: clamp(60px, 6vw, 120%);
+      margin-bottom: 20px;
+    }
+
+    &__footer {
+      margin: 60px 0 0 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1150px) {
+    &__inner {
+      align-items: center;
+    }
   }
 }
