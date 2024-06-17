@@ -24,18 +24,18 @@ html(lang="ru")
                                     span.price.hero__price from 49€/month
                             aside.hero__picture.lazy-wrapper.is-loaded
                                 .hero__picture-wrapper
-                                    img.hero__picture-img.lazy.only-desktop(alt='' src='./img/hero-index.jpg' style='')
+                                    img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-index.jpg' style='')
                                     img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-index-mobile.jpg' alt='')
                                 .hero__messages
                                     .message
                                         .message__pic
-                                            img.message__pic-img(src='./img/message-ava-1.png' alt='')
+                                            img.message__pic-img.lazy(data-src='./img/message-ava-1.png' alt='')
                                         .message__text
                                             p No need to spend hours trawling through receipts and records!
 
                                     .message
                                         .message__pic
-                                            img.message__pic-img(src='./img/message-ava-2.png' alt='')
+                                            img.message__pic-img.lazy(data-src='./img/message-ava-2.png' alt='')
                                         .message__text
                                             p Real-time data sharpens your planning, visibility and control
 
@@ -59,7 +59,6 @@ html(lang="ru")
                                 span Cooperation companies
                         section.counters__text
                             p= `Globally e-enable process-centric internal or "organic" sources rather than impactful \nmindshare. Efficiently actualize next-generation e-commerce without cross functional users. \nUniquely synthesize stand-alone bandwidth through worldwide potentialities`
-
 
                 section.section.functionality
                     .container
@@ -98,7 +97,19 @@ html(lang="ru")
                                         span Marketplace
                                         span.btn.btn--smaller.btn--link Learn more
 
+
+                section.companies.section.section--zerotop
+                    .container
+                        .companies__inner
+                            h2.companies__title.section-title Partners
+                            ul.companies__list
+                                - for (let i = 0; i < 5; i++)
+                                    li.companies__item
+                                        a(href='#', target='_blank')
+                                            picture
+                                                img.lazy(data-src=`./img/company-pic-${i + 1}.png`, alt='')
+                                            p Microsoft
             include ./parts/_footer
         include ./parts/_dialogs
         include ./parts/_footer-scripts.html
-        script(defer,src='./js/main.js?v=' + Date.now())
+        script(defer,src='./js/main.js')
