@@ -27,21 +27,40 @@ html(lang="ru")
                                     img.hero__picture-img.lazy.only-desktop(alt='' src='./img/hero-index.jpg' style='')
                                     img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-index-mobile.jpg' alt='')
                                 .hero__messages
-
                                     .message
-
                                         .message__pic
                                             img.message__pic-img(src='./img/message-ava-1.png' alt='')
                                         .message__text
-                                            p= 'All-in-one \nrestaurant POS \nand suppliers \nsolution'
+                                            p No need to spend hours trawling through receipts and records!
 
                                     .message
                                         .message__pic
                                             img.message__pic-img(src='./img/message-ava-2.png' alt='')
                                         .message__text
-                                            p= 'All-in-one \nrestaurant POS \nand suppliers \nsolution'
+                                            p Real-time data sharpens your planning, visibility and control
 
 
+
+                section.counters.section
+                    .container
+                        ul.counters__list
+                            li.counters__item
+                                strong
+                                    img(data-src='./img/grow-up-icon.svg' alt='').lazy
+                                    | +#[span.js-count 200]k
+                                span User using the platform
+                            li.counters__item
+                                strong
+                                    img(data-src='./img/grow-up-icon.svg' alt='').lazy
+                                    | #[span.js-count 98]%
+                                span Revenue growth
+                            li.counters__item
+                                strong
+                                    img(data-src='./img/grow-up-icon.svg' alt='').lazy
+                                    | +#[span.js-count 120]
+                                span Cooperation companies
+                        section.counters__text
+                            p= `Globally e-enable process-centric internal or "organic" sources rather than impactful \nmindshare. Efficiently actualize next-generation e-commerce without cross functional users. \nUniquely synthesize stand-alone bandwidth through worldwide potentialities`
             include ./parts/_footer
         include ./parts/_dialogs
         include ./parts/_footer-scripts.html
