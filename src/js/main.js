@@ -1,3 +1,7 @@
+window.isMobile = function () {
+    return window.matchMedia('(max-width: 991px)').matches;
+}
+
 function Dialog() {
     this.$_overlay = $('.overlay');
     this.$_body = $('body');
@@ -139,7 +143,125 @@ Forms.prototype.reset = function (elements) {
     elements['g-recaptcha-id'] && window.resetCaptcha(elements['g-recaptcha-id'].value);
 }
 
+export function HeaderComponent() {
+    this.$_header = $('.js-sticky-header');
+    this._headerHeight = 0;
+    this._openClass = 'nav-open';
+    this._lastScrollPosition = 0;
+    this.burger$ = $('.burger');
+    this.headerNav$ = this.$_header.find('.header__nav');
+    this.headerNavBottom$ = this.headerNav$.find('.nav__bottom');
+    this.debTimer;
+}
+
+HeaderComponent.prototype.init = function () {
+    var that = this;
+    that.$_header.addClass('show');
+    that.$_header.css({
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: "100%",
+        zIndex: 5
+    });
+    that.setHeaderHeight.call(that);
+    that.setNavHeight.call(that);
+    that.setAnimationProps.call(that);
+
+    var currentScrollPosition = $(window).scrollTop();
+
+    $(window).on('scroll', function () {
+        that.toggleMenu.call(that, false);
+        if (that.debTimer) {
+            clearTimeout(that.debTimer);
+        }
+        that.debTimer = setTimeout(function () {
+            currentScrollPosition = window.scrollY != null ? window.scrollY : $(window).scrollTop();
+
+            that.setHeaderHeight.call(that);
+
+            if (currentScrollPosition < that._headerHeight) {
+                that.$_header.removeClass(['glow']);
+                that.show.call(that, false);
+                return false;
+            }
+
+            if (that._lastScrollPosition > currentScrollPosition) {
+                that.show.call(that);
+            } else if (that._lastScrollPosition < currentScrollPosition) {
+                that.hide.call(that);
+            }
+
+            that._lastScrollPosition = currentScrollPosition;
+        }, 15)
+    });
+
+    $(window).on('resize', function () {
+        that.setHeaderHeight.call(that);
+        that.setNavHeight.call(that);
+        that.setAnimationProps.call(that);
+    });
+
+    that.burger$.on('click', function (e) {
+        that.toggleMenu.call(that);
+    });
+}
+
+HeaderComponent.prototype.setHeaderHeight = function () {
+    this._headerHeight = this.$_header.outerHeight();
+    $('body').css({
+        paddingTop: this._headerHeight + "px"
+    });
+}
+
+HeaderComponent.prototype.setNavHeight = function () {
+    this.headerNav$.css({
+        top: window.isMobile()
+            ? this._headerHeight + "px"
+            : 'auto',
+        height: window.isMobile()
+            ? (window.innerHeight - this._headerHeight) + "px"
+            : 'auto'
+    });
+}
+
+HeaderComponent.prototype.setAnimationProps = function () {
+    var items = Array.from(this.headerNav$.find('li'))
+        .concat(Array.from(this.headerNavBottom$.children()));
+
+    items.forEach(function (item, index) {
+        $(item).css({
+            transitionDelay: window.isMobile()
+                ? index * 50 + 100 + "ms"
+                : '0ms',
+        });
+    });
+}
+
+HeaderComponent.prototype.show = function (withShadow) {
+    var withShadow = withShadow != null ? withShadow : true;
+    this.$_header.addClass(['show', withShadow ? 'glow' : '']);
+    this.$_header.css({
+        transform: "translate3d(0, 0, 0)",
+    });
+}
+
+HeaderComponent.prototype.hide = function () {
+    this.$_header.removeClass(['show', 'glow']);
+    this.$_header.css({
+        transform: "translate3d(0, -" + this._headerHeight + "px, 0)",
+    });
+}
+
+HeaderComponent.prototype.toggleMenu = function (show) {
+    this.burger$.toggleClass(this._openClass, show);
+    $('body').toggleClass(this._openClass, show);
+}
+
+
 $(function () {
+    new HeaderComponent().init();
+
     window.lazyInstance = $('.lazy').Lazy({
         effect: 'fadeIn',
         effectTime: 300,
@@ -149,14 +271,6 @@ $(function () {
             $(element).closest('.lazy-wrapper').addClass('is-loaded');
             typeof cb === 'function' && cb();
         },
-    });
-
-    $('.service-item--hasChildren').on('click', function (e) {
-        if (window.innerWidth > 991) return;
-        var el = $(e.target).closest('.service-item--hasChildren');
-        el.toggleClass('active');
-        el.find('.service-item__children').slideToggle();
-        e.preventDefault();
     });
 
     var forms = new Forms();
@@ -172,24 +286,5 @@ $(function () {
             var _dialogId = $(e.target).closest('.popup').attr('data-dialog-id');
             dialogs.close.call(dialogs, _dialogId);
         }
-    });
-
-    $('body').on('click tap', function (e) {
-        var insideInner = $(e.target).closest('.touch').length;
-        if (!insideInner) {
-            $touch.removeClass('opened');
-        }
-    });
-
-    $('.year').text(new Date().getFullYear());
-
-    var $touch = $('.touch');
-
-    $('.touch__button').on('click', function (e) {
-        $touch.toggleClass('opened');
-    });
-
-    $(window).on('scroll', function () {
-        $touch.removeClass('opened');
     });
 })

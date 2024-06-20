@@ -51,7 +51,8 @@ function scripts() {
         .pipe(rollup({
             allowRealFiles: true,
             input: entries,
-            format: 'umd',
+            format: 'iife',
+            moduleName: 'main',
         }))
         .pipe(dest(dist + 'js/')) // Выгружаем готовый файл в папку назначения
         .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
