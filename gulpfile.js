@@ -63,6 +63,7 @@ function libsscripts() {
         'src/js/libs/countUp.min.js',
         'src/js/libs/jquery.lazy.js',
         'src/js/libs/wow.min.js',
+        'src/js/libs/splide.min.js',
     ];
     return src(entries)
         .pipe(concat('libs.min.js')) // Конкатенируем в один файл

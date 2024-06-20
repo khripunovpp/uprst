@@ -105,17 +105,18 @@ html(lang="ru")
 
 
 
-                section.companies.section.section--zerotop
+                section.companies.section.section--zerotop.splide#companies-slider
                     .container
                         .companies__inner
                             h2.companies__title.section-title Partners
-                            ul.companies__list
-                                - for (let i = 0; i < 5; i++)
-                                    li.companies__item
-                                        a(href='#', target='_blank')
-                                            picture
-                                                img.lazy(data-src=`./img/company-pic-${i + 1}.png`, alt='')
-                                            p Microsoft
+                            .splide__track
+                                ul.companies__list.splide__list
+                                    - for (let i = 0; i < 5; i++)
+                                        li.companies__item.splide__slide
+                                            a(href='#', target='_blank')
+                                                picture
+                                                    img(data-splide-lazy=`./img/company-pic-${i + 1}.png`, alt='')
+                                                p Microsoft
 
                 section.section.faq
                     .container

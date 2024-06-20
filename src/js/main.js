@@ -328,7 +328,7 @@ $(function () {
                 alignItems: 'flex-start',
             })
             _animatedContainer.css({
-                top: (_animatedLevelOrientirPosition.top - 2) + 'px',
+                top: (_animatedLevelOrientirPosition.top) + 'px',
                 left: (_animatedLevelOrientirPosition.left + _animatedLevelOrientirWidth) + 'px',
                 width: _el.width() + 'px',
                 height: _animatedLevelOrientirHeight + 'px',
@@ -392,4 +392,23 @@ $(function () {
             animationDuration: Math.random() * 2 + 1 + "s",
         })
     })
+
+    var teamSplide = new Splide('#companies-slider', {
+        type: 'loop',
+        perPage: 5,
+        arrows: false,
+        arrowPath: '',
+        perMove: 1,
+        lazyLoad: 'nearby',
+        autoplay: true,
+        breakpoints: {
+            1300: {
+                perPage: 4,
+            },
+            990: {
+                destroy: true,
+            },
+        }
+    });
+    teamSplide.mount();
 })

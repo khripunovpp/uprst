@@ -9,7 +9,9 @@
 <meta name="theme-color" content="#EDD861">
         <title>Главная</title>
         <link rel="stylesheet" href="./css/styles.min.css"/>
-        <link rel="stylesheet" href="./css/animate.min.css"/><link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+        <link rel="stylesheet" href="./css/animate.min.css"/>
+        <link rel="stylesheet" href="./css/splide.min.css"/>
+        <link rel="stylesheet" href="./css/splide-default.min.css"/><link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,27 +106,29 @@ Uniquely synthesize stand-alone bandwidth through worldwide potentialities</p>
             </div>
           </div>
         </section>
-        <section class="companies section section--zerotop">
+        <section class="companies section section--zerotop splide" id="companies-slider">
           <div class="container">
             <div class="companies__inner">
               <h2 class="companies__title section-title">Partners</h2>
-              <ul class="companies__list">
-                <li class="companies__item"><a href="#" target="_blank">
-                    <picture><img class="lazy" data-src="./img/company-pic-1.png" alt=""/></picture>
-                    <p>Microsoft</p></a></li>
-                <li class="companies__item"><a href="#" target="_blank">
-                    <picture><img class="lazy" data-src="./img/company-pic-2.png" alt=""/></picture>
-                    <p>Microsoft</p></a></li>
-                <li class="companies__item"><a href="#" target="_blank">
-                    <picture><img class="lazy" data-src="./img/company-pic-3.png" alt=""/></picture>
-                    <p>Microsoft</p></a></li>
-                <li class="companies__item"><a href="#" target="_blank">
-                    <picture><img class="lazy" data-src="./img/company-pic-4.png" alt=""/></picture>
-                    <p>Microsoft</p></a></li>
-                <li class="companies__item"><a href="#" target="_blank">
-                    <picture><img class="lazy" data-src="./img/company-pic-5.png" alt=""/></picture>
-                    <p>Microsoft</p></a></li>
-              </ul>
+              <div class="splide__track">
+                <ul class="companies__list splide__list">
+                  <li class="companies__item splide__slide"><a href="#" target="_blank">
+                      <picture><img data-splide-lazy="./img/company-pic-1.png" alt=""/></picture>
+                      <p>Microsoft</p></a></li>
+                  <li class="companies__item splide__slide"><a href="#" target="_blank">
+                      <picture><img data-splide-lazy="./img/company-pic-2.png" alt=""/></picture>
+                      <p>Microsoft</p></a></li>
+                  <li class="companies__item splide__slide"><a href="#" target="_blank">
+                      <picture><img data-splide-lazy="./img/company-pic-3.png" alt=""/></picture>
+                      <p>Microsoft</p></a></li>
+                  <li class="companies__item splide__slide"><a href="#" target="_blank">
+                      <picture><img data-splide-lazy="./img/company-pic-4.png" alt=""/></picture>
+                      <p>Microsoft</p></a></li>
+                  <li class="companies__item splide__slide"><a href="#" target="_blank">
+                      <picture><img data-splide-lazy="./img/company-pic-5.png" alt=""/></picture>
+                      <p>Microsoft</p></a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
