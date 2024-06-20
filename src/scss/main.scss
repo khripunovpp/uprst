@@ -1,6 +1,7 @@
 @use "header";
 @use "hero";
 @use "functionality";
+@use "forms";
 @use "counters";
 @use "footer";
 @use "vars";
@@ -480,156 +481,6 @@ select {
   line-height: 1;
 }
 
-.form {
-  &__field,
-  &__section {
-    margin: 0 0 30px;
-  }
-
-  &__field {
-
-    &-errorText {
-      display: none;
-      color: #b40905;
-    }
-
-    &.has-error {
-      .form__field-errorText {
-        display: block;
-        animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
-      }
-    }
-  }
-
-  &__captcha-errors {
-    display: none;
-    color: #b40905;
-  }
-
-  &.invalid-captcha {
-    .form__captcha-errors {
-      display: block;
-      animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
-    }
-
-    .q-captcha {
-      animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
-    }
-  }
-
-  &__label {
-    display: block;
-    margin: 0 0 15px;
-  }
-
-  &__control {
-    padding: 29px;
-    width: 100%;
-    font-weight: 700;
-
-    &.error {
-      box-shadow: inset 0 1px 1px rgba(244, 67, 54, .56), 0 0 0 3px rgba(244, 67, 54, .44);
-      animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
-    }
-  }
-
-  &__checkbox {
-    &.has-error {
-
-      animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
-
-      .form__checkboxMark {
-        box-shadow: inset 0 1px 1px rgba(244, 67, 54, .56), 0 0 0 3px rgba(244, 67, 54, .44)
-      }
-    }
-  }
-
-  &__checkboxContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-
-    a {
-      text-decoration: underline;
-    }
-  }
-
-  &__checkboxContainer input[type=checkbox] {
-    display: none
-  }
-
-  &__checkboxContainer input[type=checkbox]:checked + .form__checkboxMark {
-    background-color: #000;
-
-    svg {
-      path {
-        stroke: #fff;
-      }
-    }
-  }
-
-  &__checkboxContainer input[type=checkbox]:checked + .form__checkboxMark > .form__checkboxMark-icon {
-    opacity: 1
-  }
-
-  &__checkboxMark {
-    position: relative;
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    cursor: pointer;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    background-color: #fff;
-  }
-
-  &__checkboxMark-icon {
-    width: 16px;
-    height: 12px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
-
-  &__submit {
-    width: auto;
-
-    &:hover {
-      background-color: #fff;
-    }
-  }
-
-  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
-    &__field,
-    &__section {
-      margin: 0 0 15px;
-    }
-
-    &__control {
-      padding: 20px;
-    }
-
-
-    &__label {
-      margin: 0 0 10px;
-    }
-  }
-}
 
 @keyframes shake {
   10%, 90% {
@@ -703,20 +554,21 @@ select {
 }
 
 .popup__inner {
-  background: vars.$brand-color;
-  padding: 40px;
+  background: #ffffff;
   position: relative;
   -webkit-transform: scale(.8);
   -ms-transform: scale(.8);
   transform: scale(.8);
   opacity: 0;
   width: 100%;
-  max-width: 460px
+  max-width: 460px;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .popup__close {
   position: absolute;
-  bottom: 100%;
+  top: 0;
   right: 0;
   width: 36px;
   height: 36px;
@@ -730,12 +582,22 @@ select {
   cursor: pointer
 }
 
+.popup__header {
+  text-align: center;
+  background-color: vars.$bg-gray;
+  padding: 30px;
+}
+
 .popup__title {
   font-weight: 700;
-  font-size: 60px;
-  margin: 0 0 30px;
-  line-height: 60px;
+  font-size: 30px;
+  line-height: 120%;
+  margin: 0;
   text-align: center
+}
+
+.popup__body {
+  padding: 20px 40px 40px;
 }
 
 .popup__footer {
@@ -769,7 +631,7 @@ select {
   .popup {
     &__inner {
       padding: 0;
-      max-width: 580px;
+      max-width: 770px;
     }
   }
 }
@@ -1633,7 +1495,8 @@ select {
     right: 30px;
     top: 20px;
     transition: transform .25s ease-out;
-
+    width: 46px;
+    height: 52px;
 
     &:after,
     &:before {
@@ -1642,6 +1505,7 @@ select {
       background-color: #14373c;
       transition: transform .25s ease-out, background-color 0.3s ease-in-out;
       border-radius: 2px;
+      z-index: 2;
     }
 
     &:before {

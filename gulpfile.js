@@ -112,5 +112,5 @@ function startwatch(done) {
 exports.default = parallel(styles, stylesRaw, libsscripts, scriptsRaw, scripts, views, images, browsersync, startwatch);
 
 exports.build = function (done) {
-    return parallel(libsscripts, scriptsRaw, stylesRaw, scripts, views, images)(done);
+    return parallel(libsscripts, scriptsRaw, styles, stylesRaw, scripts, views, images)(done);
 }

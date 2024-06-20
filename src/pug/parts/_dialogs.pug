@@ -6,27 +6,30 @@ section.popup.popup--form(data-dialog-id="order")
                 button.popup__close.js-close-dialog
                     img(data-src='/img/close-icon.png', alt='').lazy
                 section.popup__tail
-                    //include ../parts/_form
-                    //+form("dialog-order")
+                    section.popup__header.js-loading-wrapper
+                        h2.popup__title Book a demo
+                    section.popup__body
+                        include ../parts/_form
+                        +form("order")
 
-section.popup(data-dialog-id="success")
-    .popup__container
-        .popup__wrapper
-            section.popup__inner
-                button.popup__close.js-close-dialog
-                    .icon-here
-                section.popup__tail
-                    section.success-dialog
-                        p.success-dialog__caption Ваша заявка успешно принята
-                        p.success-dialog__text Наш менеджер свяжется с вами в течение 15 минут.
-
-section.popup(data-dialog-id="error")
-    .popup__container
-        .popup__wrapper
-            section.popup__inner
-                button.popup__close.js-close-dialog
-                    .icon-here
-                section.popup__tail
-                    section.error
-                        p.error__caption Ошибка отправки заявки
-                        p.error__text Попробуйте отправить заявку позже или свяжитесь с нами по телефону.
+//section.popup(data-dialog-id="success")
+//    .popup__container
+//        .popup__wrapper
+//            section.popup__inner
+//                button.popup__close.js-close-dialog
+//                    .icon-here
+//                section.popup__tail
+//                    section.success-dialog
+//                        p.success-dialog__caption Ваша заявка успешно принята
+//                        p.success-dialog__text Наш менеджер свяжется с вами в течение 15 минут.
+//
+//section.popup(data-dialog-id="error")
+//    .popup__container
+//        .popup__wrapper
+//            section.popup__inner
+//                button.popup__close.js-close-dialog
+//                    .icon-here
+//                section.popup__tail
+//                    section.error
+//                        p.error__caption Ошибка отправки заявки
+//                        p.error__text Попробуйте отправить заявку позже или свяжитесь с нами по телефону.

@@ -15,6 +15,16 @@
 
   &__bottom {
     justify-content: space-between;
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
 
   &__top {
@@ -29,6 +39,16 @@
 
     &-right {
       flex: 1 0 300px;
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+
+        &:hover {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
     }
   }
 
@@ -47,7 +67,9 @@
   }
 
   &__contacts {
+
   }
+
 
   &__copy {
   }
@@ -57,11 +79,6 @@
     text-wrap: balance;
     white-space: pre-wrap;
     flex: 0 1 100%;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
   }
 
   .btn {
@@ -115,6 +132,7 @@
     }
 
   }
+
 }
 
 // like hero's styles
@@ -129,6 +147,7 @@
     font-size: clamp(30px, 8vw, 35px);
     line-height: clamp(35px, 8vw, 43px);
     margin: 0 0 10px;
+
     span {
       color: #ffffff;
     }

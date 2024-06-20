@@ -1,73 +1,49 @@
-mixin form(name, caption, text)
-    section.order.js-loading-wrapper
-        h2.order__title= caption || "Оставить заявку"
-        p.order__text= text || "Сотрудники нашей компании бесплатно проконсультируют вас по условиям программы"
-        section.order__form
-            form.form(action=`${formUrl}`, method='post')
-                section.form__field
-                    label.form__label Имя
-                    input.form__control(type='text', name='name')
-                    p.form__field-errorText Обязательное поле
-                section.form__field
-                    label.form__label Телефон
-                    input.form__control(type='tel', name='phone')
-                    p.form__field-errorText Обязательное поле
-                section.form__section
-                    .form__checkbox
-                        label.form__checkboxContainer
-                            span Согласен с&nbsp;
-                                a(href="/policy", target="_blank") условиями обработки
-                                | &nbsp;персональных данных
-                            input(type='checkbox', name='agree')
-                            span.form__checkboxMark
-                                span.form__checkboxMark-icon
-                                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 5L5 9L13 1" stroke="black" stroke-width="2"/>
-                                    </svg>
+mixin form(name, text)
 
-                        p.form__field-errorText Обязательное поле
-                section.form__section
-                    div.q-captcha(id=`${name || "order"}-captcha`)
-                    p.form__captcha-errors Обязательное поле
-                section.form__footer
-                    input(type='hidden', name='formName', value=`${name || "order"}`)
-                    button.form__submit.btn(type='submit') Отправить заявку
+    form.form(action=``, method='post')
+        section.form__field
+            label.form__label Name
+            input.form__control(type='text', name='name')
+            p.form__field-errorText Required field
+        section.form__field
+            label.form__label Family name
+            input.form__control(type='text', name='surname')
+            p.form__field-errorText Required field
+        section.form__field
+            label.form__label Phone
+            input.form__control(type='tel', name='phone')
+            p.form__field-errorText Required field
+        section.form__field
+            label.form__label Email (optional)
+            input.form__control(type='text', name='email')
+            p.form__field-errorText Required field
+        section.form__field
+            label.form__label Company/restaurant name
+            input.form__control(type='text', name='email')
+            p.form__field-errorText Required field
+        section.form__field.form__field--select
+            label.form__label Language (optional)
+            i.form__caretDown.paste-sprite-caret-left-icon.icon
+            select.form__control
+                option(value='en') English
+                option(value='pt') Português
+            p.form__field-errorText Required field
+        section.form__section
+            .form__checkbox
+                label.form__checkboxContainer
+                    span.form__checkboxContainer-text I am agree to the terms of the &nbsp;
+                        a(href="/policy", target="_blank") Privacy Policy
+                    input(type='checkbox', name='agree')
+                    span.form__checkboxMark
+                        span.form__checkboxMark-icon
+                            <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 5L5 9L13 1" stroke="black" stroke-width="2"/>
+                            </svg>
+                p.form__field-errorText Required field
 
-mixin formPartner()
-    section.order.order--partner.js-loading-wrapper
-        h2.order__title Стать партнером
-        p.order__text Сотрудники нашей компании бесплатно проконсультируют вас
-        section.order__form
-            form.form(action=`${formUrl}`, method='post')
-                section.form__field
-                    label.form__label Наименование организации
-                    input.form__control(type='text', name='company')
-                    p.form__field-errorText Обязательное поле
-                section.form__field
-                    label.form__label Контактное лицо
-                    input.form__control(type='text', name='name')
-                    p.form__field-errorText Обязательное поле
-                section.form__field
-                    label.form__label Телефон
-                    input.form__control(type='tel', name='phone')
-                    p.form__field-errorText Обязательное поле
-                section.form__section
-                    .form__checkbox
-                        label.form__checkboxContainer
-                            span Согласен с&nbsp;
-                                a(href="/policy", target="_blank") условиями обработки
-                                | &nbsp;персональных данных
-                            input(type='checkbox', name='agree')
-                            span.form__checkboxMark
-                                span.form__checkboxMark-icon
-                                    <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 5L5 9L13 1" stroke="black" stroke-width="2"/>
-                                    </svg>
-
-                        p.form__field-errorText Обязательное поле
-                section.form__section
-                    div.q-captcha(id=`partner-captcha`)
-                    p.form__captcha-errors Обязательное поле
-                section.form__footer
-                    input(type='hidden', name='formName', value='partner')
-                    button.form__submit.btn(type='submit') Отправить заявку
+        //section.form__section
+        //    div.q-captcha(id=`${name || "order"}-captcha`)
+        //    p.form__captcha-errors Required field
+        section.form__footer
+            input(type='hidden', name='formName', value=`${name || "order"}`)
+            button.form__submit.btn(type='submit') Send

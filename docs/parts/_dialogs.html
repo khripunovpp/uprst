@@ -6,44 +6,86 @@
       <section class="popup__inner">
         <button class="popup__close js-close-dialog"><img class="lazy" data-src="/img/close-icon.png" alt=""/></button>
         <section class="popup__tail">
-          <!--include ../parts/_form-->
-          <!--+form("dialog-order")-->
-        </section>
-      </section>
-    </div>
-  </div>
-</section>
-<section class="popup" data-dialog-id="success">
-  <div class="popup__container">
-    <div class="popup__wrapper">
-      <section class="popup__inner">
-        <button class="popup__close js-close-dialog">
-          <div class="icon-here"></div>
-        </button>
-        <section class="popup__tail">
-          <section class="success-dialog">
-            <p class="success-dialog__caption">Ваша заявка успешно принята</p>
-            <p class="success-dialog__text">Наш менеджер свяжется с вами в течение 15 минут.</p>
+          <section class="popup__header js-loading-wrapper">
+            <h2 class="popup__title">Book a demo</h2>
+          </section>
+          <section class="popup__body">
+                        <form class="form" action="" method="post">
+                          <section class="form__field">
+                            <label class="form__label">Name</label>
+                            <input class="form__control" type="text" name="name"/>
+                            <p class="form__field-errorText">Required field</p>
+                          </section>
+                          <section class="form__field">
+                            <label class="form__label">Family name</label>
+                            <input class="form__control" type="text" name="surname"/>
+                            <p class="form__field-errorText">Required field</p>
+                          </section>
+                          <section class="form__field">
+                            <label class="form__label">Phone</label>
+                            <input class="form__control" type="tel" name="phone"/>
+                            <p class="form__field-errorText">Required field</p>
+                          </section>
+                          <section class="form__field">
+                            <label class="form__label">Email (optional)</label>
+                            <input class="form__control" type="text" name="email"/>
+                            <p class="form__field-errorText">Required field</p>
+                          </section>
+                          <section class="form__field">
+                            <label class="form__label">Company/restaurant name</label>
+                            <input class="form__control" type="text" name="email"/>
+                            <p class="form__field-errorText">Required field</p>
+                          </section>
+                          <section class="form__field form__field--select">
+                            <label class="form__label">Language (optional)</label><i class="form__caretDown paste-sprite-caret-left-icon icon"></i>
+                            <select class="form__control">
+                              <option value="en">English</option>
+                              <option value="pt">Português</option>
+                            </select>
+                            <p class="form__field-errorText">Required field</p>
+                          </section>
+                          <section class="form__section">
+                            <div class="form__checkbox">
+                              <label class="form__checkboxContainer"><span class="form__checkboxContainer-text">I am agree to the terms of the &nbsp;<a href="/policy" target="_blank">Privacy Policy</a></span>
+                                <input type="checkbox" name="agree"/><span class="form__checkboxMark"><span class="form__checkboxMark-icon"><svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5L5 9L13 1" stroke="black" stroke-width="2"/>
+</svg></span></span>
+                              </label>
+                              <p class="form__field-errorText">Required field</p>
+                            </div>
+                          </section>
+                          <!--section.form__section-->
+                          <!--    div.q-captcha(id=`${name || "order"}-captcha`)-->
+                          <!--    p.form__captcha-errors Required field-->
+                          <section class="form__footer">
+                            <input type="hidden" name="formName" value="order"/>
+                            <button class="form__submit btn" type="submit">Send</button>
+                          </section>
+                        </form>
           </section>
         </section>
       </section>
     </div>
   </div>
 </section>
-<section class="popup" data-dialog-id="error">
-  <div class="popup__container">
-    <div class="popup__wrapper">
-      <section class="popup__inner">
-        <button class="popup__close js-close-dialog">
-          <div class="icon-here"></div>
-        </button>
-        <section class="popup__tail">
-          <section class="error">
-            <p class="error__caption">Ошибка отправки заявки</p>
-            <p class="error__text">Попробуйте отправить заявку позже или свяжитесь с нами по телефону.</p>
-          </section>
-        </section>
-      </section>
-    </div>
-  </div>
-</section>
+<!--section.popup(data-dialog-id="success")-->
+<!--    .popup__container-->
+<!--        .popup__wrapper-->
+<!--            section.popup__inner-->
+<!--                button.popup__close.js-close-dialog-->
+<!--                    .icon-here-->
+<!--                section.popup__tail-->
+<!--                    section.success-dialog-->
+<!--                        p.success-dialog__caption Ваша заявка успешно принята-->
+<!--                        p.success-dialog__text Наш менеджер свяжется с вами в течение 15 минут.-->
+<!---->
+<!--section.popup(data-dialog-id="error")-->
+<!--    .popup__container-->
+<!--        .popup__wrapper-->
+<!--            section.popup__inner-->
+<!--                button.popup__close.js-close-dialog-->
+<!--                    .icon-here-->
+<!--                section.popup__tail-->
+<!--                    section.error-->
+<!--                        p.error__caption Ошибка отправки заявки-->
+<!--                        p.error__text Попробуйте отправить заявку позже или свяжитесь с нами по телефону.-->
