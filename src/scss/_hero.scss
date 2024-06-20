@@ -4,7 +4,6 @@
   padding: 20px 0 50px;
 
   &__title {
-    white-space: pre-wrap;
     font-size: clamp(30px, 8vw, 35px);
     line-height: clamp(35px, 8vw, 43px);
     margin: 0 0 10px;
@@ -29,7 +28,6 @@
   }
 
   &__picture {
-    margin-bottom: 10px;
     display: flex;
     aspect-ratio: 1.6;
     background-color: #fff;
@@ -157,8 +155,9 @@
   margin-top: 20px;
   display: flex;
   position: relative;
-  background: url('gradient-border.svg'), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
   border: 2px solid #fff;
+  box-shadow: 10px 10px 35px rgba(6, 18, 55, 0.3);
+
 
   @supports ((-webkit-backdrop-filter:none) or (backdrop-filter:none)) {
     -webkit-backdrop-filter: blur(10px);
@@ -189,12 +188,45 @@
 
     &::before {
       content: '“';
-      color: vars.$brand-color;
+      color: vars.$brand-color-accent;
       font-size: 60px;
       line-height: 1;
       margin-right: 10px;
       display: block;
       align-self: flex-start;
     }
+  }
+}
+
+
+.animatedTitle {
+  span {
+    display: inline;
+    white-space: pre-wrap;
+  }
+
+  &__el {
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    color: vars.$brand-color;
+    font-style: italic;
+
+    i {
+      position: absolute;
+      z-index: 1;
+      transform: translateY(100%);
+
+      &.active {
+        animation: move 1s infinite alternate;
+        //position: relative;
+      }
+    }
+  }
+}
+
+@keyframes move {
+  to {
+    transform: translateY(0%);
   }
 }

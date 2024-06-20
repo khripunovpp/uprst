@@ -16,7 +16,11 @@ html(lang="ru")
                     .container
                         .hero__inner
                             section.hero__content
-                                h1.hero__title= 'All-in-one \nrestaurant POS \nand suppliers \nsolution'
+                                h1.hero__title.animatedTitle
+                                    span= 'All-in-one \nrestaurant POS \nand '
+                                    span.animatedTitle__el(data-variants="suppliers,franchises") suppliers
+                                    span  solution
+
                                 .hero__text
                                     p One restaurant system for&nbsp;all
                                 footer.hero__footer

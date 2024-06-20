@@ -126,14 +126,16 @@
   overflow: hidden;
 
   &__title {
-    white-space: pre-wrap;
     font-size: clamp(30px, 8vw, 35px);
     line-height: clamp(35px, 8vw, 43px);
     margin: 0 0 10px;
+    span {
+      color: #ffffff;
+    }
   }
 
   &__content {
-    flex: 1 1 auto;
+    flex: 0 0 50%;
   }
 
   &__text {

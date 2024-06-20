@@ -2,7 +2,11 @@ section.section.prefooter
     .container
         .prefooter__inner
             section.prefooter__content
-                h2.prefooter__title= 'All-in-one \nrestaurant POS \nand suppliers \nsolution'
+                h2.prefooter__title.animatedTitle
+                    span= 'All-in-one \nrestaurant POS \nand '
+                    span.animatedTitle__el(data-variants="suppliers,franchises") suppliers
+                    span  solution
+
                 .prefooter__text
                     p One restaurant system for&nbsp;all
                 footer.prefooter__footer
