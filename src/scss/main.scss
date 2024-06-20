@@ -651,7 +651,7 @@ select {
 
 .overlay {
   display: none;
-  background-color: rgba(#AF91B7, .5);
+  background-color: rgba(vars.$brand-color-dark, 0.5);
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -664,7 +664,7 @@ select {
   .overlay {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(#AF91B7, .85)
+    background-color: rgba(vars.$brand-color-dark, 0.5);
   }
 }
 

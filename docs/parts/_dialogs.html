@@ -6,42 +6,8 @@
       <section class="popup__inner">
         <button class="popup__close js-close-dialog"><img class="lazy" data-src="/img/close-icon.png" alt=""/></button>
         <section class="popup__tail">
-                    <section class="order js-loading-wrapper">
-                      <h2 class="order__title">Оставить заявку</h2>
-                      <p class="order__text">Сотрудники нашей компании бесплатно проконсультируют вас по условиям программы</p>
-                      <section class="order__form">
-                        <form class="form" action="undefined" method="post">
-                          <section class="form__field">
-                            <label class="form__label">Имя</label>
-                            <input class="form__control" type="text" name="name"/>
-                            <p class="form__field-errorText">Обязательное поле</p>
-                          </section>
-                          <section class="form__field">
-                            <label class="form__label">Телефон</label>
-                            <input class="form__control" type="tel" name="phone"/>
-                            <p class="form__field-errorText">Обязательное поле</p>
-                          </section>
-                          <section class="form__section">
-                            <div class="form__checkbox">
-                              <label class="form__checkboxContainer"><span>Согласен с&nbsp;<a href="/policy" target="_blank">условиями обработки</a>&nbsp;персональных данных</span>
-                                <input type="checkbox" name="agree"/><span class="form__checkboxMark"><span class="form__checkboxMark-icon"><svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 5L5 9L13 1" stroke="black" stroke-width="2"/>
-</svg></span></span>
-                              </label>
-                              <p class="form__field-errorText">Обязательное поле</p>
-                            </div>
-                          </section>
-                          <section class="form__section">
-                            <div class="q-captcha" id="dialog-order-captcha"></div>
-                            <p class="form__captcha-errors">Обязательное поле</p>
-                          </section>
-                          <section class="form__footer">
-                            <input type="hidden" name="formName" value="dialog-order"/>
-                            <button class="form__submit btn" type="submit">Отправить заявку</button>
-                          </section>
-                        </form>
-                      </section>
-                    </section>
+          <!--include ../parts/_form-->
+          <!--+form("dialog-order")-->
         </section>
       </section>
     </div>
