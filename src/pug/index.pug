@@ -17,9 +17,11 @@ html(lang="ru")
                         .hero__inner
                             section.hero__content
                                 h1.hero__title.animatedTitle
-                                    span= 'All-in-one \nrestaurant POS \nand '
-                                    span.animatedTitle__el(data-variants="suppliers,franchises") suppliers
-                                    span  solution
+                                    span= 'All-in-one \n'
+                                    span= 'restaurant POS \n'
+                                    span.animatedTitle__lvl= 'and '
+                                    span.animatedTitle__el(data-variants="suppliers,stocks,finances,staff,delivery") suppliers
+                                    span solution
 
                                 .hero__text
                                     p One restaurant system for&nbsp;all
@@ -31,13 +33,13 @@ html(lang="ru")
                                     img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-index.jpg' style='')
                                     img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-index-mobile.jpg' alt='')
                                 .hero__messages
-                                    .message
+                                    .message.wow(data-wow-duration='0.4s', data-wow-lazy-effect="fadeInUp")
                                         .message__pic
                                             img.message__pic-img.lazy(data-src='./img/message-ava-1.png' alt='')
                                         .message__text
                                             p No need to spend hours trawling through receipts and records!
 
-                                    .message
+                                    .message.wow(data-wow-duration='0.4s', data-wow-delay='0.2s', data-wow-lazy-effect="fadeInUp")
                                         .message__pic
                                             img.message__pic-img.lazy(data-src='./img/message-ava-2.png' alt='')
                                         .message__text

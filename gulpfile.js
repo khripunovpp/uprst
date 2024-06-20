@@ -58,19 +58,20 @@ function scripts() {
         .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
 
-// function libsscripts() {
-//   const entries = [
-//   ];
-//   return src(entries)
-//     .pipe(concat('libs.min.js')) // Конкатенируем в один файл
-//     .pipe(dest(dist+'js/')) // Выгружаем готовый файл в папку назначения
-//     .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
-// }
+function libsscripts() {
+    const entries = [
+        'src/js/libs/jquery.lazy.js',
+        'src/js/libs/wow.min.js',
+    ];
+    return src(entries)
+        .pipe(concat('libs.min.js')) // Конкатенируем в один файл
+        .pipe(dest(dist + 'js/')) // Выгружаем готовый файл в папку назначения
+        .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
 
 function scriptsRaw() {
     return src([
         'src/js/libs/jquery-3.6.1.min.js',
-        'src/js/libs/jquery.lazy.js',
     ])
         .pipe(dest(dist + 'js/')) // Выгружаем готовый файл в папку назначения
         .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
@@ -106,8 +107,8 @@ function startwatch(done) {
     done();
 }
 
-exports.default = parallel(styles, stylesRaw, scriptsRaw, scripts, views, images, browsersync, startwatch);
+exports.default = parallel(styles, stylesRaw, libsscripts, scriptsRaw, scripts, views, images, browsersync, startwatch);
 
 exports.build = function (done) {
-    return parallel(rstyles, scriptsRaw, stylesRaw, scripts, views, images)(done);
+    return parallel(libsscripts, scriptsRaw, stylesRaw, scripts, views, images)(done);
 }

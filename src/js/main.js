@@ -269,7 +269,11 @@ $(function () {
         threshold: 0,
         afterLoad: function (element) {
             $(element).closest('.lazy-wrapper').addClass('is-loaded');
-            typeof cb === 'function' && cb();
+
+            $('.wow').each(function (index, el) {
+                var d = $(el).data('wow-lazy-effect')
+                $(el).addClass(d);
+            });
         },
     });
 
@@ -280,6 +284,21 @@ $(function () {
         dialogs: dialogs
     });
 
+    var wow = new WOW(
+        {
+            boxClass: 'wow',      // default
+            animateClass: 'animated', // default
+            offset: 120,          // default
+            mobile: false,       // default
+            live: true        // default
+        }
+    );
+    wow.init();
+
+    $('.wow').on('animationend', () => {
+        window.lazyInstance.update();
+    });
+
     $('.popup').on('click tap', function (e) {
         var insideInner = $(e.target).closest('.popup__inner').length;
         if (!insideInner) {
@@ -287,4 +306,69 @@ $(function () {
             dialogs.close.call(dialogs, _dialogId);
         }
     });
+
+    var _animatedWordsEl = $('.animatedTitle');
+
+    function calcAnimatedWordPosition() {
+        _animatedWordsEl.each(function (index, el) {
+            var _el = $(el);
+            var _animatedContainer = $(el).find('.animatedTitle__el');
+            var _animatedLevelOrientir = $(el).find('.animatedTitle__lvl');
+            var _animatedWords = Array.from(_animatedContainer.data('variants').split(','));
+
+            // get orientir postition and dimensions
+            var _animatedLevelOrientirPosition = _animatedLevelOrientir.position();
+            var _animatedLevelOrientirWidth = _animatedLevelOrientir.width();
+            var _animatedLevelOrientirHeight = _animatedLevelOrientir.height();
+
+            _animatedContainer.addClass('ready');
+
+            _el.css({
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+            })
+            _animatedContainer.css({
+                top: (_animatedLevelOrientirPosition.top - 2) + 'px',
+                left: (_animatedLevelOrientirPosition.left + _animatedLevelOrientirWidth) + 'px',
+                width: _el.width() + 'px',
+                height: _animatedLevelOrientirHeight + 'px',
+            })
+
+            var activeWordIndex = 0;
+
+            _animatedContainer.html(_animatedWords.map(function (word) {
+                return '<i>' + word + '</i>';
+            }));
+
+            var wordsELements = _animatedContainer.find('i');
+            wordsELements.eq(activeWordIndex).addClass('active');
+
+            setInterval(function () {
+                var lastActive = wordsELements.eq(activeWordIndex)
+                lastActive.css({
+                    animationDelay: '0s',
+                })
+                lastActive.addClass('inactive');
+                lastActive.removeClass('active');
+
+                activeWordIndex = activeWordIndex + 1 >= wordsELements.length ? 0 : activeWordIndex + 1;
+
+                var newActive = wordsELements.eq(activeWordIndex);
+                newActive.removeClass('inactive');
+                newActive.css({
+                    animationDelay: '.3s',
+                })
+                newActive.addClass('active');
+            }, 2000);
+        });
+    }
+
+    setTimeout(function () {
+        calcAnimatedWordPosition();
+    }, 30);
+
+    $(window).on('resize', function () {
+        calcAnimatedWordPosition();
+    })
 })
