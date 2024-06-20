@@ -414,6 +414,15 @@ var main = (function (exports) {
             }
         });
         teamSplide.mount();
+
+
+        $('.faq__item').on('click', function (e) {
+            var answer = $(this).find('.faq__answer');
+            answer.slideToggle(200);
+            $(this).toggleClass('opened');
+        });
+
+        $('.year').text(new Date().getFullYear());
     });
 
     exports.HeaderComponent = HeaderComponent;

@@ -2,7 +2,7 @@
 html(lang="ru")
     head
 
-        base(href='./')
+        base(href='.')
         include ./parts/_meta
         +meta("Главная")
         block scripts
@@ -26,7 +26,7 @@ html(lang="ru")
                                 .hero__text
                                     p One restaurant system for&nbsp;all
                                 footer.hero__footer
-                                    button.hero__button.btn Book a demo
+                                    button.hero__button.btn.js-open-dialog(data-dialog-id="order", type="button") Book a demo
                                     span.price.hero__price from 49€/month
                             aside.hero__picture
                                 .hero__picture-wrapper.lazy-wrapper
@@ -127,9 +127,6 @@ html(lang="ru")
                                 li.faq__item
                                     .faq__button
                                         img.lazy(data-src='./img/faq-btn-bg.png', alt='').faq__button-bg
-                                        img.lazy(data-src='./img/minus-icon.svg', alt='').faq__button-minus
-                                        img.lazy(data-src='./img/plus-icon.svg', alt='').faq__button-plus
-
                                     .faq__question
                                         p Phosfluorescently evolve market-driven action items?
                                     .faq__answer
@@ -138,8 +135,6 @@ html(lang="ru")
                                 li.faq__item
                                     .faq__button
                                         img.lazy(data-src='./img/faq-btn-bg.png', alt='').faq__button-bg
-                                        img.lazy(data-src='./img/minus-icon.svg', alt='').faq__button-minus
-                                        img.lazy(data-src='./img/plus-icon.svg', alt='').faq__button-plus
                                     .faq__question
                                         p Progressively create exceptional quality vectors?
                                     .faq__answer
@@ -149,8 +144,6 @@ html(lang="ru")
                                 li.faq__item
                                     .faq__button
                                         img.lazy(data-src='./img/faq-btn-bg.png', alt='').faq__button-bg
-                                        img.lazy(data-src='./img/minus-icon.svg', alt='').faq__button-minus
-                                        img.lazy(data-src='./img/plus-icon.svg', alt='').faq__button-plus
                                     .faq__question
                                         p Conveniently maintain market positioning core competencies?
                                     .faq__answer
@@ -160,8 +153,6 @@ html(lang="ru")
                                 li.faq__item
                                     .faq__button
                                         img.lazy(data-src='./img/faq-btn-bg.png', alt='').faq__button-bg
-                                        img.lazy(data-src='./img/minus-icon.svg', alt='').faq__button-minus
-                                        img.lazy(data-src='./img/plus-icon.svg', alt='').faq__button-plus
                                     .faq__question
                                         p Quickly syndicate standardized services whereas synergistic?
                                     .faq__answer
