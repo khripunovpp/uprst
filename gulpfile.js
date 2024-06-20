@@ -60,6 +60,7 @@ function scripts() {
 
 function libsscripts() {
     const entries = [
+        'src/js/libs/countUp.min.js',
         'src/js/libs/jquery.lazy.js',
         'src/js/libs/wow.min.js',
     ];

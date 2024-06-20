@@ -277,6 +277,9 @@ $(function () {
         },
     });
 
+    var debugInUrl = window.location.href.indexOf('debug') > -1;
+    $('body').toggleClass('debug', debugInUrl);
+
     var forms = new Forms();
     var dialogs = new Dialog();
     dialogs.init();
@@ -294,10 +297,6 @@ $(function () {
         }
     );
     wow.init();
-
-    $('.wow').on('animationend', () => {
-        window.lazyInstance.update();
-    });
 
     $('.popup').on('click tap', function (e) {
         var insideInner = $(e.target).closest('.popup__inner').length;
@@ -364,11 +363,33 @@ $(function () {
         });
     }
 
-    setTimeout(function () {
-        calcAnimatedWordPosition();
-    }, 30);
-
     $(window).on('resize', function () {
         calcAnimatedWordPosition();
+    })
+
+    setTimeout(function () {
+        calcAnimatedWordPosition();
+
+    }, 30);
+
+
+    $('.js-count').each(function (index, el) {
+
+        let demo = new countUp.CountUp(el, parseInt(el.innerText), {
+            enableScrollSpy: true,
+            scrollSpyOnce: true,
+        });
+        if (!demo.error) {
+            demo.start();
+        } else {
+            console.error(demo.error);
+        }
+    });
+
+    $('.counters__item img').each(function (index, el) {
+        $(el).css({
+            animationDelay: Math.random() + "s",
+            animationDuration: Math.random() * 2 + 1 + "s",
+        })
     })
 })
