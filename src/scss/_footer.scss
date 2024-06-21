@@ -4,7 +4,8 @@
   background-color: vars.$brand-color-dark;
   color: #ffffff;
   margin-top: auto;
-
+position: relative;
+  z-index: 3;
   &__top,
   &__bottom {
     display: flex;
@@ -141,7 +142,7 @@
   background-color: vars.$brand-color;
   color: #fff;
   position: relative;
-  overflow: hidden;
+  z-index: 2;
 
   &__title {
     font-size: clamp(30px, 8vw, 35px);
@@ -175,7 +176,7 @@
   &__picture {
     aspect-ratio: 1.6;
     position: absolute;
-    bottom: -125px;
+    bottom: -90px;
     left: 50%;
     transform: translate3d(-50%, 0, 0);
     margin-left: 250px;
@@ -206,7 +207,6 @@
   }
 
   @media screen and (min-width: 991px) {
-    padding: 40px 0 100px;
 
     &__inner {
       flex-direction: row;

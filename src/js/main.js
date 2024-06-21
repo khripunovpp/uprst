@@ -306,6 +306,13 @@ $(function () {
         }
     });
 
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape') {
+            var _dialogId = $('.popup.opened').attr('data-dialog-id')
+            dialogs.close.call(dialogs, _dialogId);
+        }
+    });
+
     var _animatedWordsEl = $('.animatedTitle');
 
     function calcAnimatedWordPosition() {

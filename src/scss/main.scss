@@ -15,6 +15,7 @@ body {
   user-select: none;
   font-weight: 500;
   color: vars.$brand-color-dark;
+  scrollbar-gutter: stable;
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
     //font-size: 13px;
@@ -569,12 +570,10 @@ select {
 .popup__close {
   position: absolute;
   top: 0;
+  padding: 20px;
   right: 0;
-  width: 36px;
-  height: 36px;
-  background-color: #fff;
+  background-color: transparent;
   border: none;
-  padding: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1672,11 +1671,14 @@ select {
     display: none;
   }
 }
-
+.splide__slide {
+  transition: opacity 0.2s;
+}
 .splide__slide:not(.is-visible) {
   opacity: 0.1;
   user-select: none;
   pointer-events: none;
+
 }
 
 
