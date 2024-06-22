@@ -88,6 +88,10 @@ body {
     padding-top: 0;
 
   }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    padding: 40px 0;
+  }
 }
 
 .section-title {
