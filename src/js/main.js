@@ -153,6 +153,7 @@ export function HeaderComponent() {
     this.headerMobileGlass$ = this.$_header.find('.nav__mobileGlass');
     this.navInner$ = this.$_header.find('.nav__inner');
     this.navList$ = this.$_header.find('.nav__list');
+    this.navOverlay$ = $('.nav-overlay');
     this.headerNavBottom$ = this.headerNav$.find('.nav__bottom');
     this.debTimer;
 }
@@ -165,7 +166,7 @@ HeaderComponent.prototype.init = function () {
         top: 0,
         left: 0,
         width: "100%",
-        zIndex: 5
+        zIndex: 6
     });
     that.setHeaderHeight.call(that);
     that.setNavHeight.call(that);
@@ -284,7 +285,6 @@ HeaderComponent.prototype.openMenu = function () {
         -(this.headerMobileGlass$.height() - this._headerHeight),
         -(this.headerMobileGlass$.height() - this.navInner$.height()),
     );
-
 
     setTimeout(function () {
         $('body').addClass(that._openClass);

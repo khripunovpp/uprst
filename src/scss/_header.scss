@@ -78,8 +78,14 @@ body.nav-open {
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
     overflow: hidden;
 
-    .header {
+    .nav-overlay {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: initial;
+      user-select: initial;
+    }
 
+    .header {
       .nav {
         &__list {
           opacity: 1;
@@ -109,6 +115,7 @@ body.nav-open {
           opacity: 1;
           visibility: visible;
           pointer-events: initial;
+
         }
       }
     }
@@ -132,7 +139,7 @@ body.nav-open {
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
-      background-color: rgba(#fff, 1);
+      background-color: rgba(#fff, .8);
     }
   }
 
@@ -205,7 +212,7 @@ body.nav-open {
 
     &__mobileGlass {
       display: block;
-      background-color: rgba(#fff, .8);
+      background-color: rgba(#fff, .9);
       position: absolute;
       z-index: -1;
       width: 100%;
@@ -285,4 +292,19 @@ body.nav-open {
       }
     }
   }
+}
+
+.nav-overlay {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(vars.$brand-color-dark, .2);
+  visibility: hidden;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity .5s ease, visibility .5s ease;
 }
