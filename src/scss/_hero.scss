@@ -33,6 +33,8 @@
     background-color: #fff;
     position: relative;
 
+    aspect-ratio: 1.46;
+
     &-wrapper {
       position: relative;
       border-radius: 30px;
@@ -162,7 +164,7 @@
           width: 90%;
           margin: 0;
 
-  box-shadow: 5px 5px 23px rgba(vars.$brand-color-dark, 0.3);
+          box-shadow: 5px 5px 23px rgba(vars.$brand-color-dark, 0.3);
         }
 
         &:nth-child(n+2) {
@@ -250,6 +252,7 @@
 
     &__text {
       font-size: 12px;
+
       &::before {
         font-size: 40px;
         margin-right: 7px;

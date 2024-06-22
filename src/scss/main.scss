@@ -18,8 +18,7 @@ body {
   scrollbar-gutter: stable;
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
-    //font-size: 13px;
-    //line-height: 150%;
+    font-size: 16px;
   }
 
   &.popup-opened {

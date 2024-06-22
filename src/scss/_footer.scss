@@ -4,8 +4,9 @@
   background-color: vars.$brand-color-dark;
   color: #ffffff;
   margin-top: auto;
-position: relative;
+  position: relative;
   z-index: 3;
+
   &__top,
   &__bottom {
     display: flex;
@@ -40,6 +41,7 @@ position: relative;
 
     &-right {
       flex: 1 0 300px;
+      padding-top: 12px;
 
       a {
         color: #fff;
@@ -70,6 +72,8 @@ position: relative;
   &__contacts {
     p {
       white-space: pre-line;
+      margin-top: 0;
+      margin-bottom: 20px;
     }
   }
 
@@ -100,11 +104,33 @@ position: relative;
     .logo {
       max-width: 200px;
     }
-    //&__top,
-    //&__bottom {
-    //  flex-direction: column;
-    //  align-items: center;
-    //}
+    &__top,
+    &__bottom {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__top {
+      padding: 40px 0 10px;
+
+      &-left {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+      }
+
+      &-right {
+        flex: auto;
+        padding-top: 0;
+      }
+    }
+
+    &__about {
+      font-size: 16px;
+      line-height: 170%;
+      text-align: center;
+      margin: 20px 0 ;
+    }
 
     &__bottom {
       padding-top: 30px;
@@ -112,26 +138,16 @@ position: relative;
       flex-direction: column-reverse;
     }
 
+    &__nav {
+      padding-left: 0;
+    }
+
     &__copy {
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     &__contacts {
-      flex-wrap: wrap;
-      justify-content: center;
-
-      &-item {
-        margin: 30px 15px 0 15px;
-        font-size: 14px;
-        text-align: center;
-
-        &:last-child,
-        &:first-child {
-          flex: 100%;
-          margin-right: 0;
-          margin-left: 0;
-        }
-      }
+      text-align: center;
     }
 
   }
