@@ -35,9 +35,33 @@
 
     .btn {
       margin-top: 20px;
+
       &:hover {
         background-color: #fff !important;
         color: vars.$brand-color !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    &__item {
+      background-color: vars.$brand-color;
+      color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+
+      picture {
+        height: 120px;
+        margin-bottom: 15px;
+      }
+
+      span {
+        font-size: 20px;
+      }
+
+      .btn {
+        margin-top: 15px;
+        font-size: 18px;
       }
     }
   }

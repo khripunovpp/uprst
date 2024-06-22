@@ -153,14 +153,16 @@
   }
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
-    padding: 0 0 40px;
+    padding: 20px 0 40px;
     &__messages {
       .message {
         &:first-child {
-          top: 20px;
-          left: 20px;
-          width: 100%;
+          top: -10px;
+          left: 5%;
+          width: 90%;
           margin: 0;
+
+  box-shadow: 5px 5px 23px rgba(vars.$brand-color-dark, 0.3);
         }
 
         &:nth-child(n+2) {
@@ -191,7 +193,7 @@
   display: flex;
   position: relative;
   border: 2px solid #fff;
-  box-shadow: 10px 10px 35px rgba(6, 18, 55, 0.3);
+  box-shadow: 10px 10px 35px rgba(vars.$brand-color-dark, 0.3);
 
   &:nth-child(2) {
     animation-delay: 0.2s;

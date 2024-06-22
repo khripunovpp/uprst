@@ -99,15 +99,29 @@ body {
   font-weight: 700;
   margin: 0 0 60px;
   text-align: center;
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    font-size: 36px;
+    margin: 0 0 30px;
+  }
 }
 
 .section-title + .section-subtitle {
   margin-top: -40px;
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    margin-top: -20px;
+  }
 }
 
 .section-subtitle {
   text-align: center;
   margin: 0 0 60px;
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    margin: 0 0 30px;
+    font-size: 16px;
+    line-height: 170%;
+    opacity: 0.6;
+  }
 }
 
 .btn {
@@ -126,6 +140,11 @@ body {
   transition-timing-function: vars.$transitionFn;
   cursor: pointer;
   display: inline-block;
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    font-size: 18px;
+    padding: 13px 30px;
+  }
 
   &:hover {
     background-color: vars.$brand-color-dark;
@@ -158,10 +177,6 @@ body {
     padding: 12px 23px;
   }
 
-  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
-    font-size: 18px;
-    padding: 13px 30px;
-  }
 
   &--link {
     background-color: #fff;
@@ -1675,9 +1690,11 @@ select {
     display: none;
   }
 }
+
 .splide__slide {
   transition: opacity 0.2s;
 }
+
 .splide__slide:not(.is-visible) {
   opacity: 0.1;
   user-select: none;
