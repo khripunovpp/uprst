@@ -142,9 +142,6 @@ body.nav-open {
 
   &__item {
     margin: 0 25px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: transform .5s ease, opacity .5s ease;
   }
 
   &__bottom {
@@ -155,6 +152,15 @@ body.nav-open {
       transform: translateY(20px);
       transition: transform .5s ease, opacity .5s ease, background-color .5s ease !important;
       transition-delay: .3s !important;
+    }
+  }
+
+  @media screen and (min-width: vars.$breakpoint-max-width-desktop) {
+    &__list {
+      visibility: visible !important;
+      pointer-events: initial !important;
+      user-select: initial !important;
+      position: relative !important;
     }
   }
 
@@ -174,6 +180,9 @@ body.nav-open {
 
     &__item {
       margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: transform .5s ease, opacity .5s ease;
     }
     &__list {
       flex-direction: column;

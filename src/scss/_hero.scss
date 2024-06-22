@@ -4,9 +4,9 @@
   padding: 20px 0 50px;
 
   &__title {
-    font-size: clamp(30px, 8vw, 35px);
-    line-height: clamp(35px, 8vw, 43px);
-    margin: 0 0 10px;
+    font-size: clamp(36px, 8vw, 40px);
+    line-height: 120%;
+    margin: 0 0 20px;
   }
 
   &__content {
@@ -14,7 +14,8 @@
   }
 
   &__text {
-    font-size: 12px;
+    font-size: 20px;
+    line-height: 130%;
 
     p {
       margin: 0;
@@ -56,14 +57,12 @@
     }
   }
 
-  &__price {
-    font-size: 24px;;
-  }
 
   &__footer {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
     .button + .button {
       margin-top: 15px;
@@ -74,12 +73,17 @@
     line-height: 18px;
   }
 
-  @media screen and (min-width: 991px) {
+  @media screen and (min-width: vars.$breakpoint-max-width-desktop) {
     padding: 40px 0 100px;
 
     &__inner {
       flex-direction: row;
       align-items: flex-start;
+    }
+
+
+    &__price {
+      font-size: 24px;;
     }
 
     &__picture {
@@ -91,7 +95,7 @@
       margin-left: auto;
       background-color: transparent;
 
-    aspect-ratio: 1.34;
+      aspect-ratio: 1.34;
     }
     &__content {
       padding-right: 95px;
@@ -147,6 +151,37 @@
       }
     }
   }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    padding: 0 0 40px;
+    &__messages {
+      .message {
+        &:first-child {
+          top: 20px;
+          left: 20px;
+          width: 100%;
+          margin: 0;
+        }
+
+        &:nth-child(n+2) {
+          display: none;
+        }
+      }
+    }
+    &__content {
+      padding-top: 20px;
+    }
+
+    &__picture {
+      &-wrapper {
+        border-radius: 15px;
+      }
+    }
+
+    &__button {
+      padding: 18px 30px !important;
+    }
+  }
 }
 
 .message {
@@ -199,6 +234,26 @@
       align-self: flex-start;
     }
   }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    padding: 9px;
+    border-radius: 15px;
+    border-width: 1px;
+    &__pic {
+      width: 45px;
+      height: 45px;
+      flex: 0 0 45px;
+      margin-right: 7px;
+    }
+
+    &__text {
+      font-size: 12px;
+      &::before {
+        font-size: 40px;
+        margin-right: 7px;
+      }
+    }
+  }
 }
 
 
@@ -220,10 +275,11 @@
     text-transform: uppercase;
     color: vars.$brand-color;
     font-style: italic;
-  opacity: 0;
-  &.ready {
-    opacity: 1;
-  }
+    opacity: 0;
+
+    &.ready {
+      opacity: 1;
+    }
 
     //
     i {
