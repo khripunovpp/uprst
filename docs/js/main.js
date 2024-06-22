@@ -330,7 +330,8 @@ var main = (function (exports) {
 
 
     $(function () {
-        new HeaderComponent().init();
+        var header = new HeaderComponent();
+        header.init();
 
         window.lazyInstance = $('.lazy').Lazy({
             effect: 'fadeIn',
@@ -374,6 +375,10 @@ var main = (function (exports) {
                 var _dialogId = $(e.target).closest('.popup').attr('data-dialog-id');
                 dialogs.close.call(dialogs, _dialogId);
             }
+        });
+
+        $('.nav-overlay').on('click tap', function (e) {
+            header.closeMenu();
         });
 
         $(document).on('keydown', function (e) {
@@ -421,6 +426,7 @@ var main = (function (exports) {
                 wordsELements.eq(activeWordIndex).addClass('active');
 
                 setInterval(function () {
+                    if (document.hidden) return;
                     var lastActive = wordsELements.eq(activeWordIndex);
                     lastActive.css({
                         animationDelay: '0s',
@@ -446,7 +452,6 @@ var main = (function (exports) {
 
         setTimeout(function () {
             calcAnimatedWordPosition();
-
         }, 30);
 
 

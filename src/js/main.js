@@ -327,7 +327,8 @@ HeaderComponent.prototype.animateGlass = function (from, to, cb) {
 
 
 $(function () {
-    new HeaderComponent().init();
+    var header = new HeaderComponent();
+    header.init();
 
     window.lazyInstance = $('.lazy').Lazy({
         effect: 'fadeIn',
@@ -371,6 +372,10 @@ $(function () {
             var _dialogId = $(e.target).closest('.popup').attr('data-dialog-id');
             dialogs.close.call(dialogs, _dialogId);
         }
+    });
+
+    $('.nav-overlay').on('click tap', function (e) {
+        header.closeMenu();
     });
 
     $(document).on('keydown', function (e) {
@@ -418,6 +423,7 @@ $(function () {
             wordsELements.eq(activeWordIndex).addClass('active');
 
             setInterval(function () {
+                if (document.hidden) return;
                 var lastActive = wordsELements.eq(activeWordIndex)
                 lastActive.css({
                     animationDelay: '0s',
@@ -443,7 +449,6 @@ $(function () {
 
     setTimeout(function () {
         calcAnimatedWordPosition();
-
     }, 30);
 
 

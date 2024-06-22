@@ -68,7 +68,9 @@ position: relative;
   }
 
   &__contacts {
-
+    p {
+      white-space: pre-line;
+    }
   }
 
 
