@@ -29,7 +29,6 @@
 
   &__picture {
     display: flex;
-    aspect-ratio: 1.34;
     background-color: #fff;
     position: relative;
 
@@ -91,7 +90,8 @@
       justify-content: center;
       margin-left: auto;
       background-color: transparent;
-      //aspect-ratio: auto;
+
+    aspect-ratio: 1.34;
     }
     &__content {
       padding-right: 95px;

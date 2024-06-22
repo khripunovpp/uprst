@@ -4,14 +4,23 @@
     <div class="header__inner">
       <div class="header__logo"><a class="logo" href="/"><img src="./img/logo.svg" alt="" loading="lazy" height="52" width="141"/></a></div>
       <nav class="header__nav nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="/">Company</a></li>
-          <li class="nav__item"><a href="/">Functionalities</a></li>
-          <li class="nav__item"><a href="/">Services</a></li>
-          <li class="nav__item"><a href="/">Pricing</a></li>
-          <li class="nav__item"><a href="/">Contacts</a></li>
-        </ul>
+        <div class="nav__inner">
+          <div class="nav__mobileGlass" aria-hidden="true"></div>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="/">Company</a></li>
+            <li class="nav__item"><a href="/">Functionalities</a></li>
+            <li class="nav__item"><a href="/">Services</a></li>
+            <li class="nav__item"><a href="/">Pricing</a></li>
+            <li class="nav__item"><a href="/">Contacts</a></li>
+          </ul>
+          <div class="nav__bottom">
+            <button class="btn btn--outlined js-open-dialog" data-dialog-id="order" type="button">Book a demo</button>
+          </div>
+        </div>
       </nav>
+      <button class="burger header__burger" type="button" aria-label="Open menu">
+        <div class="burger__icon"><span></span><span></span><span></span><span></span></div>
+      </button>
       <div class="header__button">
         <button class="btn btn--outlined btn--smaller js-open-dialog" data-dialog-id="order" type="button">Book a demo</button>
       </div>

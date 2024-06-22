@@ -150,6 +150,9 @@ export function HeaderComponent() {
     this._lastScrollPosition = 0;
     this.burger$ = $('.burger');
     this.headerNav$ = this.$_header.find('.header__nav');
+    this.headerMobileGlass$ = this.$_header.find('.nav__mobileGlass');
+    this.navInner$ = this.$_header.find('.nav__inner');
+    this.navList$ = this.$_header.find('.nav__list');
     this.headerNavBottom$ = this.headerNav$.find('.nav__bottom');
     this.debTimer;
 }
@@ -167,11 +170,17 @@ HeaderComponent.prototype.init = function () {
     that.setHeaderHeight.call(that);
     that.setNavHeight.call(that);
     that.setAnimationProps.call(that);
+    that.navList$.css({
+        visibility: 'hidden',
+        userSelect: 'none',
+        pointerEvents: 'none',
+        position: 'absolute',
+    });
 
     var currentScrollPosition = $(window).scrollTop();
 
     $(window).on('scroll', function () {
-        that.toggleMenu.call(that, false);
+        that.closeMenu.call(that);
         if (that.debTimer) {
             clearTimeout(that.debTimer);
         }
@@ -197,13 +206,19 @@ HeaderComponent.prototype.init = function () {
     });
 
     $(window).on('resize', function () {
+        that.closeMenu.call(that);
         that.setHeaderHeight.call(that);
         that.setNavHeight.call(that);
         that.setAnimationProps.call(that);
     });
 
     that.burger$.on('click', function (e) {
-        that.toggleMenu.call(that);
+        var opened = that.isOpened();
+        if (opened) {
+            that.closeMenu.call(that);
+        } else {
+            that.openMenu.call(that);
+        }
     });
 }
 
@@ -215,13 +230,11 @@ HeaderComponent.prototype.setHeaderHeight = function () {
 }
 
 HeaderComponent.prototype.setNavHeight = function () {
-    this.headerNav$.css({
-        top: window.isMobile()
-            ? this._headerHeight + "px"
-            : 'auto',
-        height: window.isMobile()
-            ? (window.innerHeight - this._headerHeight) + "px"
-            : 'auto'
+    this._headerHeight = this.$_header.outerHeight();
+    var topShift = this.headerMobileGlass$.height() - this._headerHeight;
+
+    this.headerMobileGlass$.css({
+        transform: "translate3d(0, -" + (window.isMobile() ? topShift : 0) + "px, 0)",
     });
 }
 
@@ -232,7 +245,7 @@ HeaderComponent.prototype.setAnimationProps = function () {
     items.forEach(function (item, index) {
         $(item).css({
             transitionDelay: window.isMobile()
-                ? index * 50 + 100 + "ms"
+                ? index * 50 + (index ? 100 : 0) + "ms"
                 : '0ms',
         });
     });
@@ -253,9 +266,63 @@ HeaderComponent.prototype.hide = function () {
     });
 }
 
-HeaderComponent.prototype.toggleMenu = function (show) {
-    this.burger$.toggleClass(this._openClass, show);
-    $('body').toggleClass(this._openClass, show);
+HeaderComponent.prototype.isOpened = function () {
+    return this.burger$.hasClass(this._openClass);
+}
+
+HeaderComponent.prototype.openMenu = function () {
+    if (this.isOpened()) return;
+    var that = this;
+    this.navList$.css({
+        visibility: 'visible',
+        userSelect: 'auto',
+        pointerEvents: 'auto',
+        position: 'relative',
+    });
+    that.burger$.addClass(that._openClass);
+    this.animateGlass(
+        -(this.headerMobileGlass$.height() - this._headerHeight),
+        -(this.headerMobileGlass$.height() - this.navInner$.height()),
+    );
+
+
+    setTimeout(function () {
+        $('body').addClass(that._openClass);
+    }, 100);
+}
+
+HeaderComponent.prototype.closeMenu = function () {
+    if (!this.isOpened()) return;
+    var that = this;
+    this.burger$.removeClass(this._openClass);
+    $('body').removeClass(this._openClass);
+    this.animateGlass(
+        -(this.headerMobileGlass$.height() - this.navInner$.height()),
+        -(this.headerMobileGlass$.height() - this._headerHeight),
+        function () {
+            that.navList$.css({
+                visibility: 'hidden',
+                userSelect: 'none',
+                pointerEvents: 'none',
+                position: 'absolute',
+            });
+        }
+    );
+
+
+}
+
+HeaderComponent.prototype.animateGlass = function (from, to, cb) {
+    var that = this;
+    $({y: from}).animate({y: to}, {
+        duration: 350,
+        step: function (val) {
+            that.headerMobileGlass$.css("transform", `translateY(${val}px)`);
+        },
+        done: function () {
+            typeof cb === 'function' && cb();
+        }
+    });
 }
 
 

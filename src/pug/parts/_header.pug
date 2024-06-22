@@ -1,4 +1,5 @@
 section.header.js-sticky-header
+
     .container
         .header__inner
             .header__logo
@@ -6,17 +7,27 @@ section.header.js-sticky-header
                     img(src='./img/logo.svg', alt='', loading="lazy", height=52, width=141)
 
             nav.header__nav.nav
-                ul.nav__list
-                    li.nav__item
-                        a(href='/') Company
-                    li.nav__item
-                        a(href='/') Functionalities
-                    li.nav__item
-                        a(href='/') Services
-                    li.nav__item
-                        a(href='/') Pricing
-                    li.nav__item
-                        a(href='/') Contacts
+                .nav__inner
+                    .nav__mobileGlass(aria-hidden="true")
+                    ul.nav__list
+                        li.nav__item
+                            a(href='/') Company
+                        li.nav__item
+                            a(href='/') Functionalities
+                        li.nav__item
+                            a(href='/') Services
+                        li.nav__item
+                            a(href='/') Pricing
+                        li.nav__item
+                            a(href='/') Contacts
+                    .nav__bottom
+                        button.btn.btn--outlined.js-open-dialog(data-dialog-id="order", type="button") Book a demo
+            button.burger.header__burger(type="button", aria-label="Open menu")
+                .burger__icon
+                    span
+                    span
+                    span
+                    span
 
             .header__button
                 button.btn.btn--outlined.btn--smaller.js-open-dialog(data-dialog-id="order", type="button") Book a demo
