@@ -311,8 +311,6 @@ var main = (function (exports) {
                 });
             }
         );
-
-
     };
 
     HeaderComponent.prototype.animateGlass = function (from, to, cb) {
@@ -327,7 +325,6 @@ var main = (function (exports) {
             }
         });
     };
-
 
     $(function () {
         var header = new HeaderComponent();
@@ -454,9 +451,7 @@ var main = (function (exports) {
             calcAnimatedWordPosition();
         }, 30);
 
-
         $('.js-count').each(function (index, el) {
-
             let demo = new countUp.CountUp(el, parseInt(el.innerText), {
                 enableScrollSpy: true,
                 scrollSpyOnce: true,
@@ -475,7 +470,7 @@ var main = (function (exports) {
             });
         });
 
-        var teamSplide = new Splide('#companies-slider', {
+        var companiesSplide = new Splide('#companies-slider', {
             type: 'loop',
             perPage: 5,
             arrows: false,
@@ -488,11 +483,32 @@ var main = (function (exports) {
                     perPage: 4,
                 },
                 990: {
+                    perPage: 1,
+                    padding: '70px',
+                    gap: '35px',
+                },
+            }
+        });
+        companiesSplide.mount();
+
+
+        var functionalitySplide = new Splide('#functionality-slider', {
+            perPage: 1,
+            arrows: false,
+            arrowPath: '',
+            perMove: 1,
+            lazyLoad: 'nearby',
+            autoplay: true,
+            mediaQuery: 'min',
+            padding: '20px',
+            gap: '20px',
+            breakpoints: {
+                991: {
                     destroy: true,
                 },
             }
         });
-        teamSplide.mount();
+        functionalitySplide.mount();
 
 
         $('.faq__item').on('click', function (e) {

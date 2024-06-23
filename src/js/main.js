@@ -308,8 +308,6 @@ HeaderComponent.prototype.closeMenu = function () {
             });
         }
     );
-
-
 }
 
 HeaderComponent.prototype.animateGlass = function (from, to, cb) {
@@ -324,7 +322,6 @@ HeaderComponent.prototype.animateGlass = function (from, to, cb) {
         }
     });
 }
-
 
 $(function () {
     var header = new HeaderComponent();
@@ -451,9 +448,7 @@ $(function () {
         calcAnimatedWordPosition();
     }, 30);
 
-
     $('.js-count').each(function (index, el) {
-
         let demo = new countUp.CountUp(el, parseInt(el.innerText), {
             enableScrollSpy: true,
             scrollSpyOnce: true,
@@ -472,7 +467,7 @@ $(function () {
         })
     })
 
-    var teamSplide = new Splide('#companies-slider', {
+    var companiesSplide = new Splide('#companies-slider', {
         type: 'loop',
         perPage: 5,
         arrows: false,
@@ -485,11 +480,32 @@ $(function () {
                 perPage: 4,
             },
             990: {
+                perPage: 1,
+                padding: '70px',
+                gap: '35px',
+            },
+        }
+    });
+    companiesSplide.mount();
+
+
+    var functionalitySplide = new Splide('#functionality-slider', {
+        perPage: 1,
+        arrows: false,
+        arrowPath: '',
+        perMove: 1,
+        lazyLoad: 'nearby',
+        autoplay: true,
+        mediaQuery: 'min',
+        padding: '20px',
+        gap: '20px',
+        breakpoints: {
+            991: {
                 destroy: true,
             },
         }
     });
-    teamSplide.mount();
+    functionalitySplide.mount();
 
 
     $('.faq__item').on('click', function (e) {

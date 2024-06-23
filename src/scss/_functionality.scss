@@ -44,7 +44,16 @@
   }
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+
+    &__list {
+      justify-content: stretch;
+      flex-wrap: nowrap;
+      gap: 0;
+    }
+
+
     &__item {
+      flex: auto;
       background-color: vars.$brand-color;
       color: #fff;
       padding: 30px;
@@ -63,6 +72,11 @@
         margin-top: 15px;
         font-size: 18px;
       }
+    }
+  }
+  @media screen and (min-width: vars.$breakpoint-max-width-desktop) {
+    &__list {
+      display: flex !important;
     }
   }
 }

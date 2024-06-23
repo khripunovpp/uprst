@@ -84,8 +84,7 @@ body {
   padding: 100px 0;
 
   &--zerotop {
-    padding-top: 0;
-
+    padding-top: 0 !important;
   }
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
@@ -1711,17 +1710,18 @@ select {
   }
 }
 
-.splide__slide {
-  transition: opacity 0.2s;
+.companies {
+  .splide__slide {
+    transition: opacity 0.2s;
+  }
+
+  .splide__slide:not(.is-visible) {
+    opacity: 0.1;
+    user-select: none;
+    pointer-events: none;
+  }
+
 }
-
-.splide__slide:not(.is-visible) {
-  opacity: 0.1;
-  user-select: none;
-  pointer-events: none;
-
-}
-
 
 .loading,
 .finished {
