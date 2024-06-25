@@ -1478,7 +1478,6 @@ select {
     margin: 0 0 20px;
     background-color: #fff;
     padding: 30px;
-    padding-right: 106px;
     border-radius: 30px;
     position: relative;
     cursor: pointer;
@@ -1574,6 +1573,7 @@ select {
   &__question {
     font-size: 24px;
     line-height: 120%;
+    padding-right: 66px;
 
     p {
       margin: 0;
@@ -1595,17 +1595,17 @@ select {
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
     &__item {
       padding: 20px;
-      padding-right: 60px;
       border-radius: 15px;
     }
 
     &__button {
       right: 20px;
-      top: 20px;
+      top: 16px;
     }
 
     &__question {
       font-size: 18px;
+      padding-right: 66px;
     }
 
     &__answer {
