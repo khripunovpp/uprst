@@ -452,7 +452,11 @@ var main = (function (exports) {
             breakpoints: {
                 1300: {
                     perPage: 4,
-                }, 990: {
+                },
+                1100: {
+                    perPage: 3,
+                },
+                990: {
                     perPage: 1, padding: '70px', gap: '35px',
                 },
             }

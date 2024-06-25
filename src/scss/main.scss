@@ -138,8 +138,14 @@ body {
   transition-timing-function: vars.$transitionFn;
   cursor: pointer;
   display: inline-block;
+  white-space: nowrap;
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    font-size: 18px;
+    padding: 13px 30px;
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop-middle) {
     font-size: 18px;
     padding: 13px 30px;
   }
@@ -240,105 +246,6 @@ img {
   }
 }
 
-.lead {
-  margin-bottom: 50px;
-  margin-top: 40px;
-  background-color: vars.$brand-color;
-  position: relative;
-  overflow: hidden;
-
-  &__inner {
-    padding: 50px 0;
-
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: calc(50% - 500px);
-      height: 100%;
-      background: vars.$brand-color;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      right: 50%;
-      transform: translateX(50%);
-      bottom: 0;
-      width: 1000px;
-      background: linear-gradient(90deg, vars.$brand-color 30%, rgba(255, 255, 255, 0.00) 70%);
-    }
-  }
-
-  &__content {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    min-height: 220px;
-  }
-
-  &__picture {
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    margin-right: -960px;
-    height: 320px;
-    width: 1000px;
-
-    &.is-loaded {
-      width: auto;
-    }
-
-    img {
-      max-width: none;
-    }
-  }
-
-  &__title {
-    margin: auto 0 0;
-    font-size: clamp(60px, 5vw, 90px);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    text-wrap: balance;
-    max-width: 50%;
-
-    .partners-page & {
-      font-size: clamp(35px, 4vw, 60px);
-    }
-  }
-
-
-  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
-    margin: 20px 0;
-    &__content {
-      padding: 0;
-      min-height: auto;
-    }
-    &__inner {
-      padding: 20px 0;
-    }
-    &__title {
-
-      margin: 20px 0 0;
-      font-size: 30px;
-      max-width: none;
-
-      .partners-page & {
-        font-size: 20px;
-      }
-    }
-
-    &__text {
-      max-width: none;
-    }
-
-  }
-}
 
 .breadcrumbs {
   ul {

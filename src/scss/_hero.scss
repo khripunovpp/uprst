@@ -92,7 +92,7 @@
 
 
     &__price {
-      font-size: 24px;;
+      font-size: clamp(18px, 1.5vw, 24px);
     }
 
     &__picture {
@@ -110,12 +110,12 @@
       padding-right: 95px;
     }
     &__text {
-      font-size: 30px;
+       font-size: clamp(20px, 2.2vw, 30px);
       line-height: 130%;
     }
     &__title {
-      font-size: clamp(45px, 5vw, 60px);
-      line-height: clamp(60px, 6vw, 120%);
+      font-size: clamp(45px, 4.5vw, 60px);
+      line-height: 120%;
       margin-bottom: 20px;
     }
 
@@ -173,10 +173,6 @@
 
           box-shadow: 5px 5px 23px rgba(vars.$brand-color-dark, 0.3);
         }
-
-        &:nth-child(n+2) {
-          display: none;
-        }
       }
     }
     &__content {
@@ -193,12 +189,21 @@
       padding: 18px 30px !important;
     }
   }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop-middle) {
+    &__messages {
+      .message {
+        &:nth-child(n+2) {
+            display: none;
+          }
+      }
+    }
+  }
 }
 
 .message {
   padding: 20px;
   border-radius: 20px;
-  margin-top: 20px;
   display: flex;
   position: relative;
   border: 2px solid #fff;
@@ -331,11 +336,11 @@
   }
 
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
-   &__el {
-     i {
-         width: 250px;
-     }
-   }
+    &__el {
+      i {
+        width: 250px;
+      }
+    }
   }
 }
 

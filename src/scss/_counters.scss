@@ -26,6 +26,7 @@
     padding: 40px;
     font-size: 24px;
 
+
     strong {
       font-size: 60px;
       line-height: 120%;
@@ -81,6 +82,12 @@
     &__text {
       line-height: 170%;
       font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    &__item {
+      font-size: 18px;
     }
   }
 }

@@ -28,6 +28,7 @@
 
   &__logo {
     display: flex;
+    flex-shrink: 0;
   }
 
   &__burger {
@@ -71,6 +72,16 @@
       margin: 0;
     }
 
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop-middle) {
+    &__logo {
+      max-width: 100px;
+    }
+
+    .btn {
+      font-size: 16px;
+    }
   }
 }
 
@@ -186,7 +197,7 @@ body.nav-open {
     snap-type: y mandatory;
 
     &__item {
-      margin-bottom: 40px;
+      margin-bottom: 40px !important;
       opacity: 0;
       transform: translateY(20px);
       transition: transform .5s ease, opacity .5s ease;
@@ -221,6 +232,14 @@ body.nav-open {
       bottom: 0;
       height: 700px;
 
+    }
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop-middle) {
+    font-size: 16px;
+
+    &__item {
+      margin: 0 18px;
     }
   }
 }
