@@ -182,13 +182,13 @@ HeaderComponent.prototype.init = function () {
         if (that.debTimer) {
             clearTimeout(that.debTimer);
         }
+
         that.debTimer = setTimeout(function () {
             currentScrollPosition = window.scrollY != null ? window.scrollY : $(window).scrollTop();
 
             that.setHeaderHeight.call(that);
 
             if (currentScrollPosition < that._headerHeight) {
-                // that.$_header.removeClass(['glow']);
                 that.show.call(that, false);
                 return false;
             }
@@ -318,6 +318,9 @@ $(function () {
     window.lazyInstance = $('.lazy').Lazy({
         effect: 'fadeIn', effectTime: 300, chainable: false, threshold: 0, afterLoad: function (element) {
             $(element).closest('.lazy-wrapper').addClass('is-loaded');
+            $(element).css({
+                display: 'block',
+            })
 
             $('.wow').each(function (index, el) {
                 var d = $(el).data('wow-lazy-effect')
@@ -451,44 +454,50 @@ $(function () {
         })
     })
 
-    var companiesSplide = new Splide('#companies-slider', {
-        type: 'loop',
-        perPage: 5,
-        arrows: false,
-        arrowPath: '',
-        perMove: 1,
-        lazyLoad: 'nearby',
-        autoplay: true,
-        breakpoints: {
-            1300: {
-                perPage: 4,
-            },
-            1100: {
-                perPage: 3,
-            },
-            990: {
-                perPage: 1, padding: '70px', gap: '35px',
-            },
-        }
-    });
-    companiesSplide.mount();
+    var companiesEl = document.getElementById('companies-slider');
+    if (companiesEl) {
+        var companiesSplide = new Splide('#companies-slider', {
+            type: 'loop',
+            perPage: 5,
+            arrows: false,
+            arrowPath: '',
+            perMove: 1,
+            lazyLoad: 'nearby',
+            autoplay: true,
+            breakpoints: {
+                1300: {
+                    perPage: 4,
+                },
+                1100: {
+                    perPage: 3,
+                },
+                990: {
+                    perPage: 1, padding: '70px', gap: '35px',
+                },
+            }
+        });
+        companiesSplide.mount();
+    }
 
-    var functionalitySplide = new Splide('#functionality-slider', {
-        perPage: 1,
-        arrows: false,
-        arrowPath: '',
-        perMove: 1,
-        lazyLoad: 'nearby',
-        mediaQuery: 'min',
-        padding: '20px',
-        gap: '20px',
-        breakpoints: {
-            991: {
-                destroy: true,
-            },
-        }
-    });
-    functionalitySplide.mount();
+    var functionalityEl = document.getElementById('functionality-slider');
+    if (functionalityEl) {
+        var functionalitySplide = new Splide('#functionality-slider', {
+            perPage: 1,
+            arrows: false,
+            arrowPath: '',
+            perMove: 1,
+            lazyLoad: 'nearby',
+            mediaQuery: 'min',
+            padding: '20px',
+            gap: '20px',
+            breakpoints: {
+                991: {
+                    destroy: true,
+                },
+            }
+        });
+        functionalitySplide.mount();
+    }
 
     $('.faq__item').on('click', function (e) {
         var answer = $(this).find('.faq__answer');

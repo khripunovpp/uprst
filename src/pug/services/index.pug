@@ -1,0 +1,31 @@
+<!doctype html>
+html(lang="ru")
+    head
+
+        base(href='./../')
+        include ./../parts/_meta
+        +meta("Uprest")
+        block scripts
+            include ./../parts/_head-scripts
+
+    body
+        section.overflow.inner-page
+            include ./../parts/_header
+            section.tail
+
+                .container
+                    include ./../parts/_breadcrumbs.pug
+                    +breadcrumbs('Extra services')
+                    include ./../parts/_page-title.pug
+                    +pageTitle('Extra services')
+
+                    section.page-tail
+                        section.page-tail
+                            p We offer a range of additional services to help you get the most out of your restaurant management system. From setting up your account to training your staff, we’re here to help you every step of the way.
+
+
+                include ./../parts/_faq
+            include ./../parts/_footer
+        include ./../parts/_dialogs
+        include ./../parts/_footer-scripts.html
+        script(defer,src='./js/main.js')

@@ -159,6 +159,7 @@
   &__checkboxContainer {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     input[type="checkbox"] {
       display: none;
@@ -172,6 +173,9 @@
       }
     }
 
+    a {
+      text-decoration: underline;
+    }
   }
 
 
