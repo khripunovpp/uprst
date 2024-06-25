@@ -145,12 +145,15 @@ body.nav-open {
 
   &__mobileGlass {
     display: none;
-    background-color: #fff;
 
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      background-color: rgba(#fff, .8);
+    .glow & {
+      background-color: #fff;
+
+      @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        background-color: rgba(#fff, .8);
+      }
     }
   }
 
@@ -223,7 +226,6 @@ body.nav-open {
 
     &__mobileGlass {
       display: block;
-      background-color: rgba(#fff, .9);
       position: absolute;
       z-index: -1;
       width: 100%;

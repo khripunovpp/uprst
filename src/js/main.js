@@ -173,6 +173,11 @@ HeaderComponent.prototype.init = function () {
     var currentScrollPosition = $(window).scrollTop();
 
     $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 0) {
+            that.$_header.addClass(['glow']);
+        } else {
+            that.$_header.removeClass(['glow']);
+        }
         that.closeMenu.call(that);
         if (that.debTimer) {
             clearTimeout(that.debTimer);
@@ -183,12 +188,13 @@ HeaderComponent.prototype.init = function () {
             that.setHeaderHeight.call(that);
 
             if (currentScrollPosition < that._headerHeight) {
-                that.$_header.removeClass(['glow']);
+                // that.$_header.removeClass(['glow']);
                 that.show.call(that, false);
                 return false;
             }
 
             if (that._lastScrollPosition > currentScrollPosition) {
+                that.$_header.addClass(['glow']);
                 that.show.call(that);
             } else if (that._lastScrollPosition < currentScrollPosition) {
                 that.hide.call(that);
@@ -217,7 +223,7 @@ HeaderComponent.prototype.init = function () {
 
 HeaderComponent.prototype.setHeaderHeight = function () {
     this._headerHeight = this.$_header.outerHeight();
-    $('body').css({
+    $('.overflow').css({
         paddingTop: this._headerHeight + "px"
     });
 }
@@ -242,16 +248,22 @@ HeaderComponent.prototype.setAnimationProps = function () {
     });
 }
 
-HeaderComponent.prototype.show = function (withShadow) {
+HeaderComponent.prototype.show = function (withShadow, cb) {
     var withShadow = withShadow != null ? withShadow : true;
-    this.$_header.addClass(['show', withShadow ? 'glow' : '']);
+    this.$_header.addClass(['show', withShadow ? 'glow' : ''], function () {
+        typeof cb === 'function' && cb();
+    });
     this.$_header.css({
         transform: "translate3d(0, 0, 0)",
     });
 }
 
-HeaderComponent.prototype.hide = function () {
-    this.$_header.removeClass(['show', 'glow']);
+HeaderComponent.prototype.hide = function (cb) {
+    var that = this;
+    this.$_header.removeClass(['show'], function () {
+        typeof cb === 'function' && cb();
+        that.$_header.removeClass(['glow']);
+    });
     this.$_header.css({
         transform: "translate3d(0, -" + this._headerHeight + "px, 0)",
     });
@@ -267,6 +279,7 @@ HeaderComponent.prototype.openMenu = function () {
     this.navList$.css({
         visibility: 'visible', userSelect: 'auto', pointerEvents: 'auto', position: 'relative',
     });
+    that.$_header.addClass(['glow']);
     that.burger$.addClass(that._openClass);
     this.animateGlass(-(this.headerMobileGlass$.height() - this._headerHeight), -(this.headerMobileGlass$.height() - this.navInner$.height()),);
 
