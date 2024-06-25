@@ -20,7 +20,6 @@ Dialog.prototype.init = function () {
         var _dialogId = $(e.target).closest('.popup').attr('data-dialog-id');
         that.close.call(that, _dialogId);
     });
-
 }
 
 Dialog.prototype.overlayDisplay = function (cb) {
@@ -162,20 +161,13 @@ HeaderComponent.prototype.init = function () {
     var that = this;
     that.$_header.addClass('show');
     that.$_header.css({
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: 6
+        position: 'fixed', top: 0, left: 0, width: "100%", zIndex: 6
     });
     that.setHeaderHeight.call(that);
     that.setNavHeight.call(that);
     that.setAnimationProps.call(that);
     that.navList$.css({
-        visibility: 'hidden',
-        userSelect: 'none',
-        pointerEvents: 'none',
-        position: 'absolute',
+        visibility: 'hidden', userSelect: 'none', pointerEvents: 'none', position: 'absolute',
     });
 
     var currentScrollPosition = $(window).scrollTop();
@@ -245,9 +237,7 @@ HeaderComponent.prototype.setAnimationProps = function () {
 
     items.forEach(function (item, index) {
         $(item).css({
-            transitionDelay: window.isMobile()
-                ? index * 50 + (index ? 100 : 0) + "ms"
-                : '0ms',
+            transitionDelay: window.isMobile() ? index * 50 + (index ? 100 : 0) + "ms" : '0ms',
         });
     });
 }
@@ -275,16 +265,10 @@ HeaderComponent.prototype.openMenu = function () {
     if (this.isOpened()) return;
     var that = this;
     this.navList$.css({
-        visibility: 'visible',
-        userSelect: 'auto',
-        pointerEvents: 'auto',
-        position: 'relative',
+        visibility: 'visible', userSelect: 'auto', pointerEvents: 'auto', position: 'relative',
     });
     that.burger$.addClass(that._openClass);
-    this.animateGlass(
-        -(this.headerMobileGlass$.height() - this._headerHeight),
-        -(this.headerMobileGlass$.height() - this.navInner$.height()),
-    );
+    this.animateGlass(-(this.headerMobileGlass$.height() - this._headerHeight), -(this.headerMobileGlass$.height() - this.navInner$.height()),);
 
     setTimeout(function () {
         $('body').addClass(that._openClass);
@@ -296,28 +280,19 @@ HeaderComponent.prototype.closeMenu = function () {
     var that = this;
     this.burger$.removeClass(this._openClass);
     $('body').removeClass(this._openClass);
-    this.animateGlass(
-        -(this.headerMobileGlass$.height() - this.navInner$.height()),
-        -(this.headerMobileGlass$.height() - this._headerHeight),
-        function () {
-            that.navList$.css({
-                visibility: 'hidden',
-                userSelect: 'none',
-                pointerEvents: 'none',
-                position: 'absolute',
-            });
-        }
-    );
+    this.animateGlass(-(this.headerMobileGlass$.height() - this.navInner$.height()), -(this.headerMobileGlass$.height() - this._headerHeight), function () {
+        that.navList$.css({
+            visibility: 'hidden', userSelect: 'none', pointerEvents: 'none', position: 'absolute',
+        });
+    });
 }
 
 HeaderComponent.prototype.animateGlass = function (from, to, cb) {
     var that = this;
     $({y: from}).animate({y: to}, {
-        duration: 350,
-        step: function (val) {
+        duration: 350, step: function (val) {
             that.headerMobileGlass$.css("transform", `translateY(${val}px)`);
-        },
-        done: function () {
+        }, done: function () {
             typeof cb === 'function' && cb();
         }
     });
@@ -328,11 +303,7 @@ $(function () {
     header.init();
 
     window.lazyInstance = $('.lazy').Lazy({
-        effect: 'fadeIn',
-        effectTime: 300,
-        chainable: false,
-        threshold: 0,
-        afterLoad: function (element) {
+        effect: 'fadeIn', effectTime: 300, chainable: false, threshold: 0, afterLoad: function (element) {
             $(element).closest('.lazy-wrapper').addClass('is-loaded');
 
             $('.wow').each(function (index, el) {
@@ -352,15 +323,7 @@ $(function () {
         dialogs: dialogs
     });
 
-    var wow = new WOW(
-        {
-            boxClass: 'wow',      // default
-            animateClass: 'animated', // default
-            offset: 120,          // default
-            mobile: false,       // default
-            live: true        // default
-        }
-    );
+    var wow = new WOW();
     wow.init();
 
     $('.popup').on('click tap', function (e) {
@@ -384,42 +347,50 @@ $(function () {
 
     var _animatedWordsEl = $('.animatedTitle');
 
-    function calcAnimatedWordPosition() {
+    function renderAnimatedWords() {
+        _animatedWordsEl.each(function (index, el) {
+            var _el = $(el);
+            var _animatedContainer = $(el).find('.animatedTitle__el');
+            var _animatedWords = Array.from(_animatedContainer.data('variants').split(','));
+            _el.css({
+                display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
+            })
+
+            _animatedContainer.html(_animatedWords.map(function (word) {
+                return '<i>' + word + '</i>';
+            }));
+
+            _animatedContainer.find('i').eq(0).addClass('active');
+            _animatedContainer.addClass('ready');
+        });
+    }
+
+    function calcPosition() {
         _animatedWordsEl.each(function (index, el) {
             var _el = $(el);
             var _animatedContainer = $(el).find('.animatedTitle__el');
             var _animatedLevelOrientir = $(el).find('.animatedTitle__lvl');
-            var _animatedWords = Array.from(_animatedContainer.data('variants').split(','));
 
-            // get orientir postition and dimensions
             var _animatedLevelOrientirPosition = _animatedLevelOrientir.position();
             var _animatedLevelOrientirWidth = _animatedLevelOrientir.width();
             var _animatedLevelOrientirHeight = _animatedLevelOrientir.height();
 
-            _animatedContainer.addClass('ready');
-
-            _el.css({
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-            })
             _animatedContainer.css({
                 top: (_animatedLevelOrientirPosition.top) + 'px',
                 left: (_animatedLevelOrientirPosition.left + _animatedLevelOrientirWidth) + 'px',
                 width: _el.width() + 'px',
                 height: _animatedLevelOrientirHeight + 'px',
             })
+        });
+    }
 
+    function setupWordsAnimation() {
+        _animatedWordsEl.each(function (index, el) {
+            var _animatedContainer = $(el).find('.animatedTitle__el');
             var activeWordIndex = 0;
-
-            _animatedContainer.html(_animatedWords.map(function (word) {
-                return '<i>' + word + '</i>';
-            }));
-
             var wordsELements = _animatedContainer.find('i');
-            wordsELements.eq(activeWordIndex).addClass('active');
 
-            setInterval(function () {
+            var timer = setInterval(function () {
                 if (document.hidden) return;
                 var lastActive = wordsELements.eq(activeWordIndex)
                 lastActive.css({
@@ -441,17 +412,18 @@ $(function () {
     }
 
     $(window).on('resize', function () {
-        calcAnimatedWordPosition();
+        calcPosition();
     })
 
     setTimeout(function () {
-        calcAnimatedWordPosition();
+        renderAnimatedWords();
+        calcPosition();
+        setupWordsAnimation();
     }, 30);
 
     $('.js-count').each(function (index, el) {
         let demo = new countUp.CountUp(el, parseInt(el.innerText), {
-            enableScrollSpy: true,
-            scrollSpyOnce: true,
+            enableScrollSpy: true, scrollSpyOnce: true,
         });
         if (!demo.error) {
             demo.start();
@@ -462,8 +434,7 @@ $(function () {
 
     $('.counters__item img').each(function (index, el) {
         $(el).css({
-            animationDelay: Math.random() + "s",
-            animationDuration: Math.random() * 2 + 1 + "s",
+            animationDelay: Math.random() + "s", animationDuration: Math.random() * 2 + 1 + "s",
         })
     })
 
@@ -478,16 +449,12 @@ $(function () {
         breakpoints: {
             1300: {
                 perPage: 4,
-            },
-            990: {
-                perPage: 1,
-                padding: '70px',
-                gap: '35px',
+            }, 990: {
+                perPage: 1, padding: '70px', gap: '35px',
             },
         }
     });
     companiesSplide.mount();
-
 
     var functionalitySplide = new Splide('#functionality-slider', {
         perPage: 1,
@@ -506,7 +473,6 @@ $(function () {
         }
     });
     functionalitySplide.mount();
-
 
     $('.faq__item').on('click', function (e) {
         var answer = $(this).find('.faq__answer');
