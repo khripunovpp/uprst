@@ -462,7 +462,6 @@ $(function () {
         arrowPath: '',
         perMove: 1,
         lazyLoad: 'nearby',
-        autoplay: true,
         mediaQuery: 'min',
         padding: '20px',
         gap: '20px',
