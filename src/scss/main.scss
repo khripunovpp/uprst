@@ -249,6 +249,7 @@ img {
 
 .breadcrumbs {
   margin-bottom: 40px;
+  font-size: 16px;
 
   &__list {
     display: -webkit-box;
@@ -501,6 +502,7 @@ select {
   justify-content: center;
   opacity: 0.6;
   transition: opacity 0.2s ease-in;
+
   &:hover {
     opacity: 1;
   }
@@ -1711,4 +1713,23 @@ select {
   100% {
     opacity: 1;
   }
+}
+
+.inner-page {
+  background-color: vars.$bg-gray;
+
+  .tail {
+    padding: 40px 0 0;
+  }
+}
+
+.page-title {
+  font-size: 60px;
+  line-height: 120%;
+  margin: 0 0 60px;
+}
+
+.services {
+  padding: 60px 0;
+  background-color: #fff;
 }

@@ -5,3 +5,13 @@ mixin breadcrumbs(current)
                 a(href='./') Home
             li.current
                 span= current
+
+mixin breadcrumbs2lvl(beforeLast, current)
+    nav.breadcrumbs
+        ul.breadcrumbs__list
+            li
+                a(href='./') Home
+            li
+                a(href='./')= beforeLast
+            li.current
+                span= current
