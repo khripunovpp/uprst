@@ -28,14 +28,65 @@ html(lang="ru")
                                         span.price.hero__price from 49€/month
                                 aside.hero__picture
                                     .hero__picture-wrapper.lazy-wrapper
-                                        img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-service-1.jpg' style='')
-                                        img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-service-1-mobile.jpg' alt='')
+                                        img.hero__picture-img.lazy(alt='' data-src='./img/franchises-hero.jpg' style='')
+
 
 
 
 
                     section.page-tail
-                        section.services.page-section
+                        section.features.splide#features-slider
+                            .container
+                                .splide__arrows
+                                    button.splide__arrow.splide__arrow--prev(type='button', aria-label='Previous')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                    button.splide__arrow.splide__arrow--next(type='button', aria-label='Next')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                .splide__track
+                                    .features__list.splide__list
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/franchises-pic-1.jpg' alt='')
+                                            h3.feature__title Full transparency
+                                            .feature__text
+                                                ul
+                                                    li comparative business performance
+                                                    li royalty calculation
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/franchises-pic-2.jpg' alt='')
+                                            h3.feature__title Menu management
+                                            .feature__text
+                                                ul
+                                                    li pricing
+                                                    li quality and cost control
+                                                    li multicurrency support
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/franchises-pic-3.jpg' alt='')
+                                            h3.feature__title Production management
+                                            .feature__text
+                                                ul
+                                                    li production orders
+                                                    li purchase orders
+                                                    li warehouse transfers
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/franchises-pic-4.jpg' alt='')
+                                            h3.feature__title Reports
+                                            .feature__text
+                                                p comprehensive reporting system
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/franchises-pic-5.jpg' alt='')
+                                            h3.feature__title Finance
+                                            .feature__text
+                                                ul
+                                                    li budgeting
+                                                    li centralized payments
+                                                    li full transparency
+
                         include ../../parts/_faq
                 include ../../parts/_footer
         include ../../parts/_dialogs

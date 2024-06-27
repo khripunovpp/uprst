@@ -27,7 +27,7 @@
         <section class="header js-sticky-header">
           <div class="container">
             <div class="header__inner">
-              <div class="header__logo"><a class="logo" href="/"><img src="./img/logo.svg" alt="" loading="lazy" height="52" width="141"/></a></div>
+              <div class="header__logo"><a class="logo" href="."><img src="./img/logo.svg" alt="" loading="lazy" height="52" width="141"/></a></div>
               <nav class="header__nav nav">
                 <div class="nav__inner">
                   <div class="nav__mobileGlass" aria-hidden="true"></div>
@@ -73,13 +73,74 @@
                   </footer>
                 </section>
                 <aside class="hero__picture">
-                  <div class="hero__picture-wrapper lazy-wrapper"><img class="hero__picture-img lazy only-desktop" alt="" data-src="./img/hero-service-1.jpg"/><img class="hero__picture-img lazy only-mobile" data-src="./img/hero-service-1-mobile.jpg" alt=""/></div>
+                  <div class="hero__picture-wrapper lazy-wrapper"><img class="hero__picture-img lazy" alt="" data-src="./img/franchises-hero.jpg"/></div>
                 </aside>
               </div>
             </div>
           </section>
           <section class="page-tail">
-            <section class="services page-section"></section>
+            <section class="features splide" id="features-slider">
+              <div class="container">
+                <div class="splide__arrows">
+                  <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous"><img class="lazy" src="./img/arrow-right-icon.png" alt=""/></button>
+                  <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next"><img class="lazy" src="./img/arrow-right-icon.png" alt=""/></button>
+                </div>
+                <div class="splide__track">
+                  <div class="features__list splide__list">
+                    <div class="feature splide__slide">
+                      <picture class="feature__img"><img data-splide-lazy="./img/franchises-pic-1.jpg" alt=""/></picture>
+                      <h3 class="feature__title">Full transparency</h3>
+                      <div class="feature__text">
+                        <ul>
+                          <li>comparative business performance</li>
+                          <li>royalty calculation</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="feature splide__slide">
+                      <picture class="feature__img"><img data-splide-lazy="./img/franchises-pic-2.jpg" alt=""/></picture>
+                      <h3 class="feature__title">Menu management</h3>
+                      <div class="feature__text">
+                        <ul>
+                          <li>pricing</li>
+                          <li>quality and cost control</li>
+                          <li>multicurrency support</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="feature splide__slide">
+                      <picture class="feature__img"><img data-splide-lazy="./img/franchises-pic-3.jpg" alt=""/></picture>
+                      <h3 class="feature__title">Production management</h3>
+                      <div class="feature__text">
+                        <ul>
+                          <li>production orders</li>
+                          <li>purchase orders</li>
+                          <li>warehouse transfers</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="feature splide__slide">
+                      <picture class="feature__img"><img data-splide-lazy="./img/franchises-pic-4.jpg" alt=""/></picture>
+                      <h3 class="feature__title">Reports</h3>
+                      <div class="feature__text">
+                        <p>comprehensive reporting system</p>
+                      </div>
+                    </div>
+                    <div class="feature splide__slide">
+                      <picture class="feature__img"><img data-splide-lazy="./img/franchises-pic-5.jpg" alt=""/></picture>
+                      <h3 class="feature__title">Finance</h3>
+                      <div class="feature__text">
+                        <ul>
+                          <li>budgeting</li>
+                          <li>centralized payments</li>
+                          <li>full transparency</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
             <section class="section faq">
               <div class="container">
                 <div class="faq__inner">
@@ -137,7 +198,7 @@
             <div class="footer__inner">
               <section class="footer__top">
                 <section class="footer__top-left">
-                  <div class="footer__logo"><a class="logo" href="/"><img class="lazy" data-src="./img/logo-white.svg" alt="" height="52" width="141"/></a></div>
+                  <div class="footer__logo"><a class="logo" href="."><img class="lazy" data-src="./img/logo-white.svg" alt="" height="52" width="141"/></a></div>
                   <nav class="footer__nav nav">
                     <ul class="nav__list">
                       <li class="nav__item"><a href="./company/">Company</a></li>

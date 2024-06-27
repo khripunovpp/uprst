@@ -467,6 +467,7 @@ var main = (function (exports) {
                 perMove: 1,
                 lazyLoad: 'nearby',
                 autoplay: true,
+                pagination: false,
                 breakpoints: {
                     1300: {
                         perPage: 4,
@@ -475,7 +476,9 @@ var main = (function (exports) {
                         perPage: 3,
                     },
                     990: {
-                        perPage: 1, padding: '70px', gap: '35px',
+                        perPage: 1,
+                        padding: '70px',
+                        gap: '35px',
                     },
                 }
             });
@@ -521,6 +524,32 @@ var main = (function (exports) {
                 }
             });
             extraServicesSplide.mount();
+        }
+
+        var featuresEl = document.getElementById('features-slider');
+        if (featuresEl) {
+            var featuresSplide = new Splide(featuresEl, {
+                perPage: 4,
+                // arrows: false,
+                arrowPath: '',
+                perMove: 1,
+                lazyLoad: 'nearby',
+                gap: 30,
+                pagination: false,
+                breakpoints: {
+                    1100: {
+                        perPage: 3,
+                    },
+                    990: {
+                        perPage: 1,
+                        padding: '20px',
+                        gap: '20px',
+                        arrows: false,
+                        pagination: true,
+                    },
+                }
+            });
+            featuresSplide.mount();
         }
 
         $('.faq__item').on('click', function (e) {

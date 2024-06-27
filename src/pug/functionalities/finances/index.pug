@@ -28,14 +28,57 @@ html(lang="ru")
                                         span.price.hero__price from 49€/month
                                 aside.hero__picture
                                     .hero__picture-wrapper.lazy-wrapper
-                                        img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-service-1.jpg' style='')
-                                        img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-service-1-mobile.jpg' alt='')
+                                        img.hero__picture-img.lazy(alt='' data-src='./img/finances-hero.png' style='')
+
 
 
 
 
                     section.page-tail
-                        section.services.page-section
+                        section.features.splide#features-slider
+                            .container
+                                .splide__arrows
+                                    button.splide__arrow.splide__arrow--prev(type='button', aria-label='Previous')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                    button.splide__arrow.splide__arrow--next(type='button', aria-label='Next')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                .splide__track
+                                    .features__list.splide__list
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/finances-pic-1.png' alt='')
+                                            h3.feature__title PnL
+                                            .feature__text
+                                                p Automatic reflection of all operations in financial reports
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/finances-pic-2.png' alt='')
+                                            h3.feature__title Cashflow reports
+                                            .feature__text
+                                                p The exact and up-to-date cost of each dish 5 methods of cost calculation - from moving average to last-in, first-out
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/finances-pic-3.png' alt='')
+                                            h3.feature__title Payment calendar
+                                            .feature__text
+                                                p= "\"Real-time price of each ingredient\" \n\"Nutritional information\" \n\"Photos, version history, modifiers, size scale, The ability to display recipes on a kitchen monitor\""
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/finances-pic-4.png' alt='')
+                                            h3.feature__title All expenses
+                                            .feature__text
+                                                p= "\"Warehouse report builder\" \n\"Detailed reports on goods movement\""
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/finances-pic-5.png' alt='')
+                                            h3.feature__title Budgeting
+                                            .feature__text
+                                                p= "\"Mobile customizable inventory audits\" \n\"Convenient analysis of inventory audit results\""
+
                         include ../../parts/_faq
                 include ../../parts/_footer
         include ../../parts/_dialogs

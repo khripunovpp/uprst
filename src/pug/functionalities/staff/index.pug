@@ -28,14 +28,58 @@ html(lang="ru")
                                         span.price.hero__price from 49€/month
                                 aside.hero__picture
                                     .hero__picture-wrapper.lazy-wrapper
-                                        img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-service-1.jpg' style='')
-                                        img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-service-1-mobile.jpg' alt='')
+                                        img.hero__picture-img.lazy(alt='' data-src='./img/staff-hero.jpg' style='')
+
 
 
 
 
                     section.page-tail
-                        section.services.page-section
+                        section.features.splide#features-slider
+                            .container
+
+                                .splide__arrows
+                                    button.splide__arrow.splide__arrow--prev(type='button', aria-label='Previous')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                    button.splide__arrow.splide__arrow--next(type='button', aria-label='Next')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                .splide__track
+                                    .features__list.splide__list
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/staff-pic-1.jpg' alt='')
+                                            h3.feature__title Scheduling
+                                            .feature__text
+                                                p= "\"Flexible shift and position system\" \n\"Access to the schedule for each employee from the POS terminal\""
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/staff-pic-2.jpg' alt='')
+                                            h3.feature__title Attendance control
+                                            .feature__text
+                                                p= "Clocking in using a PIN code or a plastic card"
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/staff-pic-3.jpg' alt='')
+                                            h3.feature__title Payroll calculation
+                                            .feature__text
+                                                p= "\"Automatic salary calculation based on configured schedules and pay rates\" \n\"Incentive schemes and bonuses\" \n\"Transparent access to salary calculations for each employee\""
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/staff-pic-4.jpg' alt='')
+                                            h3.feature__title Reports
+                                            .feature__text
+                                                p Personal report access from POS "Comprehensive system of reports on each employee's performance"
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/staff-pic-5.jpg' alt='')
+                                            h3.feature__title Permissions
+                                            .feature__text
+                                                p= "\"Flexible access rights configuration for dozens of users\" \n\"Event log allowing to determine who did what\""
+
                         include ../../parts/_faq
                 include ../../parts/_footer
         include ../../parts/_dialogs

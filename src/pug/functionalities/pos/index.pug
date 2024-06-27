@@ -28,14 +28,52 @@ html(lang="ru")
                                         span.price.hero__price from 49€/month
                                 aside.hero__picture
                                     .hero__picture-wrapper.lazy-wrapper
-                                        img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-service-1.jpg' style='')
-                                        img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-service-1-mobile.jpg' alt='')
+                                        img.hero__picture-img.lazy(alt='' data-src='./img/pos-hero.jpg' style='')
+
 
 
 
 
                     section.page-tail
-                        section.services.page-section
+                        section.features.splide#features-slider
+                            .container
+
+                                .splide__arrows
+                                    button.splide__arrow.splide__arrow--prev(type='button', aria-label='Previous')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                    button.splide__arrow.splide__arrow--next(type='button', aria-label='Next')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                .splide__track
+                                    .features__list.splide__list
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/pos-pic-1.jpg' alt='')
+                                            h3.feature__title Certified by Financas
+                                            .feature__text
+                                                p= "Fully compliant with Portuguese legal requirements. Approved by Autoridade Tributária e Aduaneira"
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/pos-pic-2.jpg' alt='')
+                                            h3.feature__title Delivery and reservations
+                                            .feature__text
+                                                p= "Integrated delivery and table reservation services. Glovo, Bolt, Uber Eats, Fork, and others. Takeout orders and table"
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/pos-pic-3.jpg' alt='')
+                                            h3.feature__title Back-office functions
+                                            .feature__text
+                                                p= "Reports, inventory management, product write-offs, and transfers"
+
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/pos-pic-4.jpg' alt='')
+                                            h3.feature__title Staff
+                                            .feature__text
+                                                p= "Time tracking, shift scheduling, salary and bonus calculations, personal sales"
+
+
                         include ../../parts/_faq
                 include ../../parts/_footer
         include ../../parts/_dialogs

@@ -28,14 +28,66 @@ html(lang="ru")
                                         span.price.hero__price from 49€/month
                                 aside.hero__picture
                                     .hero__picture-wrapper.lazy-wrapper
-                                        img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-service-1.jpg' style='')
-                                        img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-service-1-mobile.jpg' alt='')
+                                        img.hero__picture-img.lazy(alt='' data-src='./img/marketplace-hero.jpg' style='')
+
 
 
 
 
                     section.page-tail
-                        section.services.page-section
+                        section.features.splide#features-slider
+                            .container
+
+                                .splide__arrows
+                                    button.splide__arrow.splide__arrow--prev(type='button', aria-label='Previous')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                    button.splide__arrow.splide__arrow--next(type='button', aria-label='Next')
+                                        img.lazy(src='./img/arrow-right-icon.png' alt='')
+                                .splide__track
+                                    .features__list.splide__list
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/marketplace-pic-1.jpg' alt='')
+                                            h3.feature__title Built-in
+                                            functionality
+                                            .feature__text
+                                                ul
+                                                    li embedded apps
+                                                    li delivery
+                                                    li loyalty
+                                                    li finances
+                                                    li call-center
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/marketplace-pic-2.jpg' alt='')
+                                            h3.feature__title 3-rd party solutions
+                                            .feature__text
+                                                ul
+                                                    li dashboards
+                                                    li mobile apps
+                                                    li e-kiosks
+                                                    li e-tips
+                                                    li QR and payments
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/marketplace-pic-3.jpg' alt='')
+                                            h3.feature__title Self-made apps
+                                            .feature__text
+                                                ul
+                                                    li open extensive API
+                                                    li easy integration
+                                                    li low development costs
+                                        .feature.splide__slide
+                                            picture.feature__img
+                                                img(data-splide-lazy='./img/marketplace-pic-4.jpg' alt='')
+                                            h3.feature__title Integrations
+                                            .feature__text
+                                                ul
+                                                    li reservation platforms
+                                                    li delivery aggregators
+                                                    li payment gateways
+                                                    li web-sites
+
                         include ../../parts/_faq
                 include ../../parts/_footer
         include ../../parts/_dialogs

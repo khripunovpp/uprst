@@ -12,7 +12,6 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   line-height: normal;
-  user-select: none;
   font-weight: 500;
   color: vars.$brand-color-dark;
   scrollbar-gutter: stable;
@@ -1630,6 +1629,35 @@ select {
   }
 }
 
+
+.splide {
+  .splide__pagination {
+    display: flex !important;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-top: 30px;
+    &__page {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+      margin: 0;
+      &.is-active {
+        background-color: vars.$brand-color;
+        transform: none;
+      }
+
+    }
+
+
+      li {
+
+        padding: 10px;
+      }
+  }
+}
+
 .companies {
   .splide__slide {
     transition: opacity 0.2s;
@@ -1640,7 +1668,6 @@ select {
     user-select: none;
     pointer-events: none;
   }
-
 }
 
 .loading,
@@ -2035,5 +2062,120 @@ select {
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
     column-count: 1;
     column-gap: 0;
+  }
+}
+
+.features {
+  padding: 50px 0 100px;
+  background-color: #fff;
+
+  .splide__track {
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    padding: 40px 0;
+  }
+
+  .splide__arrows {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .splide__arrow {
+    top: 0;
+    transform: none;
+    position: relative;
+    background-color: transparent;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    &--prev {
+      left: auto;
+      transform: scale(-1);
+
+      &:not([disabled]):hover {
+        transform: scale(-1) translateX(10px);
+      }
+    }
+
+    &--next {
+      right: auto;
+
+      &:not([disabled]):hover {
+        transform: translateX(10px);
+      }
+    }
+  }
+}
+
+.feature {
+  border-radius: 30px;
+
+  &__img {
+    position: relative;
+    margin-bottom: 30px;
+    display: block;
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    &::after {
+      content: '';
+      background-image: linear-gradient(60.89deg, vars.$brand-color 0%, rgba(22, 87, 255, 0) 30.77%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    img {
+      aspect-ratio: .86;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 130%;
+    margin: 0 0 10px;
+  }
+
+  &__text {
+    line-height: 200%;
+    opacity: .6;
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: inside;
+    }
+
+    p,
+    li {
+      white-space: pre-wrap;
+    }
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    &__title {
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+
+    &__text {
+      line-height: 170%;
+    }
+
+    &__img {
+      margin-bottom: 20px;
+      border-radius: 15px;
+    }
   }
 }
