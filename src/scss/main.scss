@@ -275,6 +275,11 @@ img {
     width: 8px;
     margin: 0 5px
   }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
 }
 
 .form-aside {
@@ -1721,15 +1726,152 @@ select {
   .tail {
     padding: 40px 0 0;
   }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    .tail {
+      padding: 20px 0 0;
+    }
+
+  }
 }
 
 .page-title {
   font-size: 60px;
   line-height: 120%;
   margin: 0 0 60px;
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    font-size: 36px;
+    margin: 0 0 30px;
+  }
 }
 
 .services {
+}
+
+.page-section {
   padding: 60px 0;
   background-color: #fff;
+}
+
+.pricing {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    gap: 30px;
+
+    li {
+      flex: 0 0 calc(33.3333% - 20px);
+    }
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    .pricing {
+      &__list {
+        gap: 20px;
+
+        li {
+          flex: 0 1 calc(50% - 20px);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .pricing {
+      &__list {
+        li {
+          flex: 0 1 100%;
+        }
+      }
+
+    }
+  }
+}
+
+.price-card {
+  cursor: pointer;
+  background-color: #fff;
+  border: 3px solid vars.$brand-color-dark;
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  .btn {
+    margin-top: auto;
+    padding: 20px 36px;
+  }
+
+  &__name {
+    font-size: 30px;
+    line-height: 120%;
+    margin: 0 0 20px;
+  }
+
+  &__desc {
+    opacity: 0.6;
+    margin-bottom: 40px;
+
+    p {
+      white-space: pre-wrap;
+      margin: 0;
+    }
+  }
+
+  &__price {
+    font-size: 90px;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  &__old-price {
+    opacity: 0.6;
+    margin-bottom: 60px;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: vars.$brand-color-dark;
+
+    .btn {
+      background-color: #fff;
+      color: vars.$brand-color-dark;
+    }
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    padding: 30px 40px 40px;
+    border-radius: 15px;
+
+    &__name {
+      font-size: 20px;
+      margin: 0 0 20px;
+    }
+
+    &__desc {
+      margin-bottom: 30px;
+    }
+
+    &__price {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    &__old-price {
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 18px 30px;
+    }
+
+  }
 }

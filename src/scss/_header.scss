@@ -163,6 +163,12 @@ body.nav-open {
 
   &__item {
     margin: 0 25px;
+
+    &.active {
+      a {
+        color: vars.$brand-color;
+      }
+    }
   }
 
   &__bottom {
