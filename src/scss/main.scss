@@ -2019,3 +2019,21 @@ select {
     width: 90%;
   }
 }
+
+.column-text {
+  column-count: 2;
+  column-gap: 40px;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    column-count: 1;
+    column-gap: 0;
+  }
+}

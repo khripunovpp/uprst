@@ -44,6 +44,17 @@
     }
   }
 
+  
+  .inner-page & {
+    &__item {
+      background-color: vars.$brand-color;
+      color: #fff;
+      &:hover {
+        background-color: vars.$brand-color-dark;
+      }
+    }
+  }
+
   @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
 
     &__list {
