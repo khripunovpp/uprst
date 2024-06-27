@@ -502,6 +502,27 @@ var main = (function (exports) {
             functionalitySplide.mount();
         }
 
+
+        var extraServicesEl = document.getElementById('extra-services-slider');
+        if (extraServicesEl) {
+            var extraServicesSplide = new Splide(extraServicesEl, {
+                perPage: 1,
+                arrows: false,
+                arrowPath: '',
+                perMove: 1,
+                lazyLoad: 'nearby',
+                mediaQuery: 'min',
+                padding: '20px',
+                gap: '20px',
+                breakpoints: {
+                    991: {
+                        destroy: true,
+                    },
+                }
+            });
+            extraServicesSplide.mount();
+        }
+
         $('.faq__item').on('click', function (e) {
             var answer = $(this).find('.faq__answer');
             answer.slideToggle(200);

@@ -20,7 +20,33 @@ html(lang="ru")
                         +pageTitle('Extra services')
 
                         section.page-tail
-
+                            section.extra-services.splide#extra-services-slider
+                                .splide__track
+                                    section.extra-services__list.splide__list
+                                        .js-open-dialog.extra-services__item.wow.fadeIn(data-wow-duration='0.4s', data-dialog-id="order").splide__slide
+                                            picture
+                                                img.lazy(data-splide-lazy='./img/extra-services-icon-1.svg', data-src='./img/extra-services-icon-1.svg', alt='')
+                                            span= "Outsorced inventory \nmanagement services"
+                                        .js-open-dialog.extra-services__item.wow.fadeIn(data-wow-duration='0.4s', data-dialog-id="order").splide__slide
+                                            picture
+                                                img.lazy(data-splide-lazy='./img/extra-services-icon-2.svg', data-src='./img/extra-services-icon-2.svg', alt='')
+                                            span= "LAN installation and \nconfiguration"
+                                        .js-open-dialog.extra-services__item.wow.fadeIn(data-wow-duration='0.4s', data-dialog-id="order").splide__slide
+                                            picture
+                                                img.lazy(data-splide-lazy='./img/extra-services-icon-3.svg', data-src='./img/extra-services-icon-3.svg', alt='')
+                                            span= "Selection and installation \nof audio solutions"
+                                        .js-open-dialog.extra-services__item.wow.fadeIn(data-wow-duration='0.4s', data-dialog-id="order").splide__slide
+                                            picture
+                                                img.lazy(data-splide-lazy='./img/extra-services-icon-4.svg', data-src='./img/extra-services-icon-4.svg', alt='')
+                                            span= "Fast and affordable \nproduction of high-quality\nrestaurant signage"
+                                        .js-open-dialog.extra-services__item.wow.fadeIn(data-wow-duration='0.4s', data-dialog-id="order").splide__slide
+                                            picture
+                                                img.lazy(data-splide-lazy='./img/extra-services-icon-5.svg', data-src='./img/extra-services-icon-5.svg', alt='')
+                                            span= "Setting up Real-time \nFinancial Accounting \nin Syrve"
+                                        .js-open-dialog.extra-services__item.wow.fadeIn(data-wow-duration='0.4s', data-dialog-id="order").splide__slide
+                                            picture
+                                                img.lazy(data-splide-lazy='./img/extra-services-icon-6.svg', data-src='./img/extra-services-icon-6.svg', alt='')
+                                            span= "Development of software \nsolutions integrated \nwith Syrve"
 
                     include ./../parts/_faq
                 include ./../parts/_footer

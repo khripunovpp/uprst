@@ -1,0 +1,36 @@
+<svg width="164" height="184" viewBox="0 0 164 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M73.1935 4.94025C78.6635 1.87168 85.3365 1.87167 90.8065 4.94024L154.807 40.8427C160.484 44.0279 164 50.0309 164 56.5413V127.459C164 133.969 160.484 139.972 154.807 143.157L90.8065 179.06C85.3365 182.128 78.6635 182.128 73.1935 179.06L9.19348 143.157C3.51549 139.972 0 133.969 0 127.459V56.5413C0 50.0309 3.5155 44.0279 9.19348 40.8427L73.1935 4.94025Z" fill="#F6F7FA"/>
+<path d="M69.25 113.75C88.3038 113.75 103.75 98.3038 103.75 79.25C103.75 60.1962 88.3038 44.75 69.25 44.75C50.1962 44.75 34.75 60.1962 34.75 79.25C34.75 98.3038 50.1962 113.75 69.25 113.75Z" fill="white"/>
+<path d="M43.75 82.25V83.75L55.75 94.25V76.5499L43.75 82.25Z" fill="white"/>
+<path d="M105.25 52.25H64.75C63.85 52.25 63.25 52.85 63.25 53.75V59.75H57.25C56.35 59.75 55.75 60.35 55.75 61.25V94.25L84.25 107.75L106.75 97.1V53.75C106.75 53 106 52.25 105.25 52.25Z" fill="white"/>
+<path d="M55.75 107.75V125.75L84.25 139.25L112.75 125.75V107.75H55.75Z" fill="white"/>
+<path d="M112.75 112.25V125.75L84.25 139.25L55.75 125.75V112.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M84.2499 109.25V139.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M43.75 106.25L72.25 119.75L84.25 109.25V107.75L55.75 94.25L43.75 104.75V106.25Z" fill="white" stroke="#061237" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M124.75 106.25L96.2499 119.75L84.2499 109.25V107.75L112.75 94.25L124.75 104.75V106.25Z" fill="white" stroke="#061237" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55.75 94.25L43.75 83.75V82.25L50.5 79.1" fill="white"/>
+<path d="M55.75 94.25L43.75 83.75V82.25L50.5 79.1" stroke="#061237" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104.5 90.35L112.75 94.25L124.75 83.75V82.25L113.35 76.85" fill="white"/>
+<path d="M104.5 90.35L112.75 94.25L124.75 83.75V82.25L113.35 76.85" stroke="#061237" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63.25 56.75V53.75C63.25 52.85 63.85 52.25 64.75 52.25H105.25C106.15 52.25 106.75 52.85 106.75 53.75V70.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M55.75 88.25V61.25C55.75 60.35 56.35 59.75 57.25 59.75H97.75C98.65 59.75 99.25 60.35 99.25 61.25V88.25" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M58.75 68.75H96.25" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M60.25 64.25H63.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M66.25 64.25H69.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M72.25 64.25H75.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M99.25 91.25V94.25" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M106.75 79.25V82.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M106.75 73.25V76.25" stroke="#061237" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M117.25 44.75V47.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M117.25 50.75V53.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M115.75 49.25H112.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M121.75 49.25H118.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M39.25 53.75V56.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M39.25 59.75V62.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M37.75 58.25H34.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M43.75 58.25H40.75" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M124.75 61.25V64.25" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M124.75 67.25V70.25" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M123.25 65.75H120.25" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+<path d="M129.25 65.75H126.25" stroke="#E01760" stroke-width="3" stroke-miterlimit="10"/>
+</svg>
