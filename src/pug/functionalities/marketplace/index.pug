@@ -1,0 +1,43 @@
+<!doctype html>
+html(lang="ru")
+    head
+
+        base(href='./../../')
+        include ../../parts/_meta
+        +meta("Uprest - Marketplace and integrations")
+        block scripts
+            include ../../parts/_head-scripts
+
+    body
+        section.overflow
+            .inner-page
+                include ../../parts/_header
+
+                section.tail
+                    section.hero.hero--service
+                        .container
+                            .hero__inner
+                                section.hero__content
+                                    include ../../parts/_breadcrumbs
+                                    +breadcrumbs2lvl('Functionalities', 'Marketplace and integrations')
+                                    h1.hero__title Marketplace and integrations
+                                    .hero__text
+                                        p= 'Dozens of compatible solutions'
+                                    footer.hero__footer
+                                        button.hero__button.btn.js-open-dialog(data-dialog-id="order", type="button") Book a demo
+                                        span.price.hero__price from 49€/month
+                                aside.hero__picture
+                                    .hero__picture-wrapper.lazy-wrapper
+                                        img.hero__picture-img.lazy.only-desktop(alt='' data-src='./img/hero-service-1.jpg' style='')
+                                        img.hero__picture-img.lazy.only-mobile(data-src='./img/hero-service-1-mobile.jpg' alt='')
+
+
+
+
+                    section.page-tail
+                        section.services.page-section
+                        include ../../parts/_faq
+                include ../../parts/_footer
+        include ../../parts/_dialogs
+        include ../../parts/_footer-scripts.html
+        script(defer,src='./js/main.js')

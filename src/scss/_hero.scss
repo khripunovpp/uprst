@@ -97,6 +97,7 @@
     &--service {
       padding-top: 20px;
       padding-bottom: 70px;
+
     }
 
     &__price {
@@ -143,6 +144,12 @@
   @media screen and (min-width: 1150px) {
     &__inner {
       align-items: center;
+    }
+
+    &--service {
+      .hero__inner {
+       align-items: flex-start;
+      }
     }
   }
 
