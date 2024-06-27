@@ -1875,3 +1875,147 @@ select {
 
   }
 }
+
+.contacts {
+  display: flex;
+
+
+  &__section {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 0 0 10px;
+      white-space: pre-wrap;
+      line-height: 150%;
+
+      &:first-child {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__info {
+    flex: 0 0 410px;
+    padding: 40px;
+    background-color: #fff;
+    margin-right: 30px;
+
+    a {
+      color: vars.$brand-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__info,
+  &__map {
+    border-radius: 30px;
+  }
+
+  &__map {
+    position: relative;
+    flex: 1 1 100%;
+    background-color: #fff;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      box-shadow: inset 0 0 0 3px rgba(vars.$brand-color-dark, 0.2);
+      border-radius: 30px;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+  @media screen and (max-width: vars.$breakpoint-max-width-desktop) {
+    flex-direction: column-reverse;
+    gap: 30px;
+
+    &__info {
+      margin-right: 0;
+      padding: 20px;
+      flex: auto;
+    }
+    &__section {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    p {
+      &:first-child {
+        font-size: 20px;
+
+      }
+    }
+    &__map {
+      min-height: 320px;
+
+      &::after {
+        border-radius: 15px;
+      }
+    }
+
+    &__info,
+    &__map {
+      border-radius: 15px;
+    }
+
+
+  }
+}
+
+#map {
+  width: 100%;
+
+  min-height: 320px;
+  height: 100%;
+  position: relative;
+}
+
+.marker {
+  position: absolute;
+  right: 60px;
+  top: 60px;
+  z-index: 1;
+  display: flex;
+  max-width: 360px;
+  border-radius: 20px;
+  padding: 28px 23px;
+  border: 2px solid #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.6) 100%);
+  box-shadow: 10px 10px 35px 0 rgba(vars.$brand-color-dark, .3);
+  @supports ((-webkit-backdrop-filter:none) or (backdrop-filter:none)) {
+    backdrop-filter: blur(10px);
+  }
+
+  img {
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 991px) {
+    right: 20px;
+    top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+  }
+}

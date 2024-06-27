@@ -61,13 +61,40 @@
                           </ul>
                         </nav>
                         <h1 class="page-title">Contacts</h1>
-            <section class="page-tail"></section>
+            <section class="page-tail">
+              <sectio class="contacts">
+                <section class="contacts__info">
+                  <div class="contacts__section">
+                    <p>Office address</p>
+                    <p>R. A Gazeta d'Oeiras, 2, 2D 
+2780-171 Oeiras</p>
+                  </div>
+                  <div class="contacts__section">
+                    <p>Mailing address</p>
+                    <p>Salvador Barata Feyo, 7-1DTO 
+2780-355 Oeiras</p>
+                  </div>
+                  <div class="contacts__section">
+                    <p>Email</p>
+                    <p><a href="mailto:sa@uprest.pt">sa@uprest.pt</a></p>
+                  </div>
+                  <div class="contacts__section">
+                    <p>Telegram</p>
+                    <p><a href="https://t.me/andsunf">@andsunf</a></p>
+                  </div>
+                </section>
+                <section class="contacts__map">
+                  <div class="marker wow" data-wow-duration="0.4s" data-wow-lazy-effect="fadeInUp"><img class="lazy" data-src="./img/logo-icon.svg" alt=""/><span>R. A Gazeta d'Oeiras, 2, 2D. 2780-171 Oeiras</span></div>
+                  <div class="lazy" id="map" data-src="./img/map.png"></div>
+                </section>
+              </sectio>
+            </section>
           </div>
           <section class="section faq">
             <div class="container">
               <div class="faq__inner">
                 <h2 class="faq__title section-title">FAQ</h2>
-                <p class="faq__text section-subtitle">Conveniently strategize fully tested potentialities before goal-oriented collaboration and idea-sharing.</p>
+                <p class="faq__text section-subtitle">Conveniently strategize fully tested potentialities before goal-oriented collaboration and idea-sharing</p>
                 <section class="faq__list">
                   <li class="faq__item">
                     <div class="faq__button"><img class="lazy faq__button-bg" data-src="./img/faq-btn-bg.png" alt=""/></div>
@@ -242,7 +269,27 @@ R. A Gazeta d'Oeiras, 2, 2D.
     <!--                section.popup__tail-->
     <!--                    section.error-->
     <!--                        p.error__caption Ошибка отправки заявки-->
-    <!--                        p.error__text Попробуйте отправить заявку позже или свяжитесь с нами по телефону.-->
+    <!--                        p.error__text Попробуйте отправить заявку позже или свяжитесь с нами по телефону.--><script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUSPEX26HjX_a5sksj70QdmYH6Z9rc5aA&loading=async&callback=initMap">
+</script>
+
+<script>
+  // window.initMap = function () {
+  //   // The location of Uluru
+  //   const position = {lat: -25.344, lng: 131.031};
+  //   // Request needed libraries.
+  //   //@ts-ignore
+  //   google.maps.importLibrary("maps");
+  //   google.maps.importLibrary("marker");
+  //
+  //   // The map, centered at Uluru
+  //   const map = new google.maps.Map(document.getElementById("map"), {
+  //     zoom: 4,
+  //     center: position,
+  //   });
+  //
+  // }
+</script>
     <script defer="defer" src="./js/main.js"></script>
   </body>
 </html>

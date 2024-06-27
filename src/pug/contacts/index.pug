@@ -20,6 +20,29 @@ html(lang="ru")
                         +pageTitle('Contacts')
 
                         section.page-tail
+                            sectio.contacts
+                                section.contacts__info
+                                    .contacts__section
+                                        p Office address
+                                        p= "R. A Gazeta d'Oeiras, 2, 2D \n2780-171 Oeiras"
+                                    .contacts__section
+                                        p Mailing address
+                                        p= "Salvador Barata Feyo, 7-1DTO \n2780-355 Oeiras"
+                                    .contacts__section
+                                        p Email
+                                        p
+                                            a(href='mailto:sa@uprest.pt') sa@uprest.pt
+                                    .contacts__section
+                                        p Telegram
+                                        p
+                                            a(href='https://t.me/andsunf') @andsunf
+
+                                section.contacts__map
+                                    .marker.wow(data-wow-duration='0.4s', data-wow-lazy-effect="fadeInUp")
+                                        img(data-src='./img/logo-icon.svg', alt='').lazy
+                                        span R. A Gazeta d'Oeiras, 2, 2D. 2780-171 Oeiras
+                                    #map(data-src='./img/map.png').lazy
+
 
 
                     include ./../parts/_faq
