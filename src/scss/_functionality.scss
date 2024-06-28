@@ -23,7 +23,7 @@
     transition: all 0.2s ease-in-out;
     text-align: center;
 
-
+text-wrap: balance;
     &:hover {
       background-color: vars.$brand-color;
       color: #fff;
@@ -116,6 +116,7 @@
     transition: all 0.2s ease-in-out;
     text-align: center;
     cursor: pointer;
+    text-wrap: balance;
 
 
     &:hover {
