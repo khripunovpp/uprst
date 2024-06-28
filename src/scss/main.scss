@@ -1638,11 +1638,13 @@ select {
     left: auto;
     right: auto;
     margin-top: 30px;
+
     &__page {
       width: 10px;
       height: 10px;
       opacity: 1;
       margin: 0;
+
       &.is-active {
         background-color: vars.$brand-color;
         transform: none;
@@ -1651,10 +1653,10 @@ select {
     }
 
 
-      li {
+    li {
 
-        padding: 10px;
-      }
+      padding: 10px;
+    }
   }
 }
 
@@ -2012,10 +2014,11 @@ select {
 
 #map {
   width: 100%;
-
   min-height: 320px;
   height: 100%;
+  background-position: center;
   position: relative;
+  background-size: cover;
 }
 
 .marker {
