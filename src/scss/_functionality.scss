@@ -22,7 +22,7 @@
     justify-content: center;
     transition: all 0.2s ease-in-out;
     text-align: center;
-
+    text-wrap: balance;
 
     &:hover {
       background-color: vars.$brand-color;
@@ -44,11 +44,12 @@
     }
   }
 
-  
+
   .inner-page & {
     &__item {
       background-color: vars.$brand-color;
       color: #fff;
+
       &:hover {
         background-color: vars.$brand-color-dark;
       }
@@ -116,6 +117,7 @@
     transition: all 0.2s ease-in-out;
     text-align: center;
     cursor: pointer;
+    text-wrap: balance;
 
 
     &:hover {
