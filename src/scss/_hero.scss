@@ -98,6 +98,9 @@
       padding-top: 20px;
       padding-bottom: 70px;
 
+      .hero__picture {
+        max-width: 600px;
+      }
     }
 
     &__price {
